@@ -8,14 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>C230 Consultores | Consultoría de política pública</title>
+    <title>C230 Consultores | Admin Panel</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -50,7 +50,7 @@
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-          <img src="./img/logo_light.png" alt="MosaDev Logo" class="brand-image elevation-3" style="opacity: .8">
+          <img src="./img/logo_light.png" alt="c230 consultores logo" class="brand-image elevation-3" style="opacity: .8;max-width: 40px;margin-top: 0 !important;">
           <span class="brand-text font-weight-light">Admin Panel</span>
         </a>
 
@@ -59,17 +59,10 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              @if (Auth::user()->photo)
-                <img src="./img/profile/{{ Auth::user()->photo }}" class="img-circle elevation-2" alt="User Image">
-              @else
-                <img src="./img/superhero.png" alt="User Image">
-              @endif
-
+              <img src="./img/superhero.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <router-link to="/profile" class="d-block">
-                {{ Auth::user()->name }}
-              </router-link>
+              <a href="#" class="d-block">Omar Morales</a>
             </div>
           </div>
 
@@ -79,7 +72,7 @@
               <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
               <li class="nav-item">
                  <router-link to="/dashboard" class="nav-link">
-                   <i class="nav-icon fas fa-tachometer-alt text-blue"></i>
+                   <i class="nav-icon fas fa-tachometer-alt"></i>
                    <p>
                      Dashboard
                    </p>
@@ -88,7 +81,7 @@
 
                <li class="nav-item has-treeview">
                  <a href="#" class="nav-link">
-                   <i class="nav-icon fas fas fa-cog text-green"></i>
+                   <i class="nav-icon fas fas fa-cog"></i>
                    <p>Management<i class="right fas fa-angle-left"></i></p>
                  </a>
                  <ul class="nav nav-treeview">
@@ -118,7 +111,7 @@
 
                <li class="nav-item">
                  <router-link to="/profile" class="nav-link">
-                   <i class="nav-icon fas fa-user text-orange"></i>
+                   <i class="nav-icon fas fa-user"></i>
                    <p>
                      Profile
                    </p>
@@ -150,7 +143,6 @@
         <div class="content">
           <div class="container-fluid">
             <router-view></router-view>
-            <vue-progress-bar></vue-progress-bar>
           </div><!-- /.container-fluid -->
         </div>
         <!-- /.content -->
@@ -171,18 +163,12 @@
       <footer class="main-footer">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
-          Anything you want
+          C230 Consultores
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2018 <a href="https://mosadev.io">mosadev.io</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2018 <a href="https://mosadev.io">c-230.com</a>.</strong> All rights reserved.
       </footer>
     </div>
     <!-- ./wrapper -->
-
-    {{-- @auth
-      <script>
-        window.user = @json(auth()->user())
-      </script>
-    @endauth --}}
   </body>
 </html>

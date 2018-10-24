@@ -23,8 +23,8 @@
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
       <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-          {{ config('app.name', 'Laravel') }}
+        <a class="navbar-brand d-block d-md-none" href="{{ url('/') }}">
+          <img src="./img/logo_dark.png" alt="c230 consultores logo" class="brand-image">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
@@ -32,12 +32,20 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Left Side Of Navbar -->
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto d-block d-md-none">
 
           </ul>
 
+          <ul class="nav navbar-nav navbar-logo mx-auto d-none d-md-block">
+            <li class="nav-item">
+              <span class="navbar-text">
+                Generamos insumos para ayudar a nuestros clientes a tomar mejores decisiones
+              </span>
+            </li>
+          </ul>
+
           <!-- Right Side Of Navbar -->
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto d-block d-md-none">
             <!-- Authentication Links -->
             @guest
               <li class="nav-item">
@@ -73,6 +81,20 @@
   </nav>
 
   <main class="py-4">
+    <ul class="nav flex-column sidenav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
     @yield('content')
   </main>
 </div>
