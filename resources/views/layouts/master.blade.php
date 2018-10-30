@@ -28,7 +28,7 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+            <a class="nav-link" data-widget="pushmenu" href=""><i class="fas fa-bars"></i></a>
           </li>
         </ul>
 
@@ -49,7 +49,7 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="{{ url('/') }}" class="brand-link">
           <img src="./img/logo_light.png" alt="c230 consultores logo" class="brand-image elevation-3" style="opacity: .8;max-width: 40px;margin-top: 0 !important;">
           <span class="brand-text font-weight-light">Admin Panel</span>
         </a>
@@ -59,10 +59,10 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              <img src="./img/superhero.png" class="img-circle elevation-2" alt="User Image">
+              <img src="./img/{{ Auth::user()->photo }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <a href="#" class="d-block">Omar Morales</a>
+              <a href="" class="d-block">{{ Auth::user()->name }}</a>
             </div>
           </div>
 
@@ -80,7 +80,7 @@
                </li>
 
                <li class="nav-item has-treeview">
-                 <a href="#" class="nav-link">
+                 <a href="" class="nav-link">
                    <i class="nav-icon fas fas fa-cog"></i>
                    <p>Management<i class="right fas fa-angle-left"></i></p>
                  </a>
@@ -92,7 +92,7 @@
                      </router-link>
                    </li>
                    <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="" class="nav-link">
                        <i class="fas fa-circle nav-icon"></i>
                        <p>Inactive Page</p>
                      </a>
@@ -143,6 +143,8 @@
         <div class="content">
           <div class="container-fluid">
             <router-view></router-view>
+
+            <vue-progress-bar></vue-progress-bar>
           </div><!-- /.container-fluid -->
         </div>
         <!-- /.content -->

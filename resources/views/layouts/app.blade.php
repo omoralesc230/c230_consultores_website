@@ -21,7 +21,7 @@
 </head>
 <body>
   <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top">
       <div class="container">
         <a class="navbar-brand d-block d-md-none" href="{{ url('/') }}">
           <img src="./img/logo_dark.png" alt="c230 consultores logo" class="brand-image">
@@ -80,22 +80,28 @@
     </div>
   </nav>
 
-  <main class="py-4">
-    <ul class="nav flex-column sidenav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    @yield('content')
+  <ul class="nav flex-column sidenav app-sidenav mt-5">
+    <li class="nav-item mt-3" @click="activate(0)">
+      <a class="nav-link active" href="{{ url('/') }}">
+        <img src="./img/logo_dark.png" alt="c230 consultores logo">
+      </a>
+    </li>
+    <li class="nav-item mt-2" @click="activate(1)" :class="{ activesn : active_el == 1 }">
+      <a class="nav-link text-uppercase" v href="#">quiénes somos</a>
+    </li>
+    <li class="nav-item mt-2" @click="activate(2)" :class="{ activesn : active_el == 2 }">
+      <a class="nav-link text-uppercase" href="#">qué hacemos</a>
+    </li>
+    <li class="nav-item mt-2" @click="activate(3)" :class="{ activesn : active_el == 3 }">
+      <a class="nav-link text-uppercase" href="#">medios</a>
+    </li>
+    <li class="nav-item mt-2" @click="activate(4)" :class="{ activesn : active_el == 4 }">
+      <a class="nav-link text-uppercase" href="#">contacto</a>
+    </li>
+  </ul>
+
+  <main>
+    <router-view></router-view>
   </main>
 </div>
 </body>

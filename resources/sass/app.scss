@@ -19,12 +19,58 @@ $fa-font-path: "../webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+@include media-breakpoint-up(sm) {
+  .navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+}
+@include media-breakpoint-up(md) {
+  .navbar-laravel {
+    background-color: $orange;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    .navbar-text{
+      color: white;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .navbar-laravel {
+    background-color: $orange;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    .navbar-text{
+      color: white;
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .navbar-laravel {
+    background-color: $orange;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    .navbar-text{
+      color: white;
+    }
+  }
 }
 
 .router-link-exact-active {
   background-color: $grey;
   color: #fff !important;
+}
+
+.app-sidenav {
+  width: 230px;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  a{
+    color: #4a4a4a;
+  }
+}
+
+.activesn {
+  background-color: $orange;
+  a{
+    color: white;
+  }
 }
