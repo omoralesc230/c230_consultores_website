@@ -111,6 +111,21 @@
             </div>
 
             <div class="form-group">
+              <select name="type" v-model="form.department" id="department" class="form-control" :class="{ 'is-invalid': form.errors.has('department') }">
+                <option value="">Select Department</option>
+                <option value="consultancy">Consultancy</option>
+                <option value="administration">Administration</option>
+                <option value="digital solutions">Digital solutions</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <input v-model="form.position" type="text" name="position" placeholder="Position"
+                class="form-control" :class="{ 'is-invalid': form.errors.has('position') }">
+              <has-error :form="form" field="position"></has-error>
+            </div>
+
+            <div class="form-group">
               <input v-model="form.password" type="password" name="password" placeholder="Password"
                 class="form-control" :class="{ 'is-invalid': form.errors.has('password') }">
               <has-error :form="form" field="password"></has-error>
@@ -140,6 +155,8 @@ export default {
         email: '',
         password: '',
         type: '',
+        department: '',
+        position: '',
         bio: '',
         photo: ''
       })

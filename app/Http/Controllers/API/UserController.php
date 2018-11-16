@@ -16,7 +16,7 @@ class UserController extends Controller
    */
   public function __construct()
   {
-      $this->middleware('auth:api');
+      $this->middleware('auth:api', ['except' => ['index']]);
   }
   /**
   * Display a listing of the resource.
@@ -25,7 +25,7 @@ class UserController extends Controller
   */
   public function index()
   {
-    return User::latest()->paginate(10);
+    return User::orderBy('created_at', 'asc')->paginate(10);
   }
 
   /**
@@ -47,9 +47,49 @@ class UserController extends Controller
       'name' => $request['name'],
       'email' => $request['email'],
       'type' => $request['type'],
+      'department' => $request['department'],
+      'position' => $request['position'],
       'bio' => $request['bio'],
       'password' => Hash::make($request['password']),
     ]);
+  }
+
+  public function profile()
+  {
+    return auth('api')->user();
+  }
+
+  public function updateProfile(Request $request)
+  {
+    $user = auth('api')->user();
+
+    $this->validate($request,[
+      'name' => 'required|string|max:191',
+      'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+      'password' => 'sometimes|min:6'
+    ]);
+
+    $currentPhoto = $user->photo;
+
+    if ($request->photo != $currentPhoto) {
+      $name = time().'.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ';')))[1])[1];
+
+      \Image::make($request->photo)->save(public_path('img/profile_pics/').$name);
+
+      $request->merge(['photo' => $name]);
+
+      $userPhoto = public_path('img/profile_pics/').$currentPhoto;
+      if (file_exists($userPhoto)) {
+        @unlink($userPhoto);
+      }
+    }
+
+    if (!empty($request->password)) {
+      $request->merge(['password' => Hash::make($request['password'])]);
+    }
+
+    $user->update($request->all());
+    return ['message' => "Success"];
   }
 
   /**
@@ -93,7 +133,16 @@ class UserController extends Controller
   */
   public function destroy($id)
   {
+    $this->authorize('isAdmin');
+
     $user = User::findOrFail($id);
+
+    // $currentPhoto = $user->photo;
+    //
+    // $userPhoto = public_path('img/profile_pics/').$currentPhoto;
+    // if (file_exists($userPhoto)) {
+    //   @unlink($userPhoto);
+    // }
 
     // delete de user
     $user->delete();

@@ -29884,19 +29884,21 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Brands';
 }
 
+.navbar-laravel {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+}
+
 @media (min-width: 576px) {
   .navbar-laravel {
     background-color: #fff;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   }
 }
 
 @media (min-width: 768px) {
   .navbar-laravel {
     background-color: #ff7900;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   }
 
   .navbar-laravel .navbar-text {
@@ -29907,8 +29909,6 @@ readers do not read off random characters that represent icons */
 @media (min-width: 992px) {
   .navbar-laravel {
     background-color: #ff7900;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   }
 
   .navbar-laravel .navbar-text {
@@ -29919,8 +29919,6 @@ readers do not read off random characters that represent icons */
 @media (min-width: 1200px) {
   .navbar-laravel {
     background-color: #ff7900;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   }
 
   .navbar-laravel .navbar-text {
@@ -29929,7 +29927,7 @@ readers do not read off random characters that represent icons */
 }
 
 .router-link-exact-active {
-  background-color: #7a7a7a;
+  background-color: #ff7900;
   color: #fff !important;
 }
 
@@ -29938,10 +29936,42 @@ readers do not read off random characters that represent icons */
   height: 100%;
   position: fixed;
   z-index: 2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 0;
+  display: none;
 }
 
 .app-sidenav a {
   color: #4a4a4a;
+}
+
+@media (min-width: 576px) {
+  .app-sidenav {
+    width: 0;
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-sidenav {
+    width: 230px;
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .app-sidenav {
+    width: 230px;
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-sidenav {
+    width: 230px;
+    display: block;
+  }
 }
 
 .activesn {
@@ -29950,5 +29980,89 @@ readers do not read off random characters that represent icons */
 
 .activesn a {
   color: white;
+}
+
+.join-us-home {
+  height: 100vh;
+}
+
+@media (min-width: 576px) {
+  .join-us-home {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .join-us-home {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .join-us-home {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .join-us-home {
+    height: 40vh;
+  }
+}
+
+.our-practice-home {
+  height: 100vh;
+}
+
+@media (min-width: 576px) {
+  .our-practice-home {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .our-practice-home {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .our-practice-home {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .our-practice-home {
+    height: 70vh;
+  }
+}
+
+.what-we-do-home {
+  height: 100vh;
+}
+
+@media (min-width: 576px) {
+  .what-we-do-home {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .what-we-do-home {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .what-we-do-home {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .what-we-do-home {
+    height: 60vh;
+  }
 }
 

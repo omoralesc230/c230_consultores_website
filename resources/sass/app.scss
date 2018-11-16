@@ -19,34 +19,30 @@ $fa-font-path: "../webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
-@include media-breakpoint-up(sm) {
-  .navbar-laravel {
+// Quill wysiwyg
+
+.navbar-laravel{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  @include media-breakpoint-up(xs) {
+      background-color: #fff;
+  }
+  @include media-breakpoint-up(sm) {
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   }
-}
-@include media-breakpoint-up(md) {
-  .navbar-laravel {
+  @include media-breakpoint-up(md) {
     background-color: $orange;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     .navbar-text{
       color: white;
     }
   }
-}
-@include media-breakpoint-up(lg) {
-  .navbar-laravel {
+  @include media-breakpoint-up(lg) {
     background-color: $orange;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     .navbar-text{
       color: white;
     }
   }
-}
-@include media-breakpoint-up(xl) {
-  .navbar-laravel {
+  @include media-breakpoint-up(xl) {
     background-color: $orange;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     .navbar-text{
       color: white;
     }
@@ -54,7 +50,7 @@ $fa-font-path: "../webfonts";
 }
 
 .router-link-exact-active {
-  background-color: $grey;
+  background-color: $orange;
   color: #fff !important;
 }
 
@@ -63,8 +59,29 @@ $fa-font-path: "../webfonts";
   height: 100%;
   position: fixed;
   z-index: 2;
+  transition: 0.5s;
   a{
     color: #4a4a4a;
+  }
+  @include media-breakpoint-up(xs) {
+    width: 0;
+    display: none;
+  }
+  @include media-breakpoint-up(sm) {
+    width: 0;
+    display: none;
+  }
+  @include media-breakpoint-up(md) {
+    width: 230px;
+    display: block;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 230px;
+    display: block;
+  }
+  @include media-breakpoint-up(xl) {
+    width: 230px;
+    display: block;
   }
 }
 
@@ -72,5 +89,59 @@ $fa-font-path: "../webfonts";
   background-color: $orange;
   a{
     color: white;
+  }
+}
+
+.join-us-home {
+  @include media-breakpoint-up(xs) {
+    height: 100vh;
+  }
+  @include media-breakpoint-up(sm) {
+    height: 60vh;
+  }
+  @include media-breakpoint-up(md) {
+    height: 40vh;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 40vh;
+  }
+  @include media-breakpoint-up(xl) {
+    height: 40vh;
+  }
+}
+
+.our-practice-home {
+  @include media-breakpoint-up(xs) {
+    height: 100vh;
+  }
+  @include media-breakpoint-up(sm) {
+    height: 80vh;
+  }
+  @include media-breakpoint-up(md) {
+    height: 70vh;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 70vh;
+  }
+  @include media-breakpoint-up(xl) {
+    height: 70vh;
+  }
+}
+
+.what-we-do-home {
+  @include media-breakpoint-up(xs) {
+    height: 100vh;
+  }
+  @include media-breakpoint-up(sm) {
+    height: 80vh;
+  }
+  @include media-breakpoint-up(md) {
+    height: 70vh;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 70vh;
+  }
+  @include media-breakpoint-up(xl) {
+    height: 60vh;
   }
 }

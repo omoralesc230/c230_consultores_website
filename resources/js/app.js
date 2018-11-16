@@ -9,9 +9,17 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+// configuration of wysiwyg
+
+//
+
 // moment configuration starts
 import moment from 'moment';
 //Parse, validate, manipulate, and display dates and times in JavaScript.
+
+//
+import Gate from "./Gate";
+//
 
 // use costum event to send HTTP request
 window.Fire = new Vue();
@@ -39,16 +47,26 @@ Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 // vform configuration ends
 
+// laravel vue pagination
+Vue.component('pagination', require('laravel-vue-pagination'));
+// pagination config ends
+
 // Vue router configuration starts
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 let routes = [
   { path: '/', component: require('./components/Home.vue') },
+  { path: '/aboutus', component: require('./components/AboutUs.vue') },
+  { path: '/whatwedo', component: require('./components/WhatWeDo.vue') },
   { path: '/home', component: require('./components/Dashboard.vue') },
   { path: '/dashboard', component: require('./components/Dashboard.vue') },
   { path: '/developer', component: require('./components/Developer.vue') },
   { path: '/users', component: require('./components/Users.vue') },
+  { path: '/media', component: require('./components/Media.vue') },
+  { path: '/vacancy', component: require('./components/Vacancy.vue') },
+  { path: '/post', component: require('./components/Post.vue') },
+  { path: '/post/:id', component: require('./components/PostSingle.vue') },
   { path: '/profile', component: require('./components/Profile.vue') },
   { path: '*', component: require('./components/NotFound.vue') },
 ];
@@ -77,6 +95,22 @@ Vue.filter('upText', function(text){
 Vue.filter('myDate', function(created){
   return moment(created).format('MMMM Do YYYY');
 });
+
+Vue.filter('DateS', function(created){
+  return moment(created).format('l');
+});
+
+Vue.filter('myTime', function(created){
+  return moment(created).format('LT');
+});
+
+Vue.filter('characters', function(value){
+  if (value.length >= 180) {
+    return value.substring(0,180) + '...';
+  } else {
+    return value
+  }
+});
 // Filters end
 
 /**
@@ -99,15 +133,23 @@ Vue.component(
    require('./components/passport/PersonalAccessTokens.vue')
 );
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('editor', require('./components/Editor.vue'));
+Vue.component('vacancies', require('./components/VacanciesComponent.vue'));
+Vue.component('posts', require('./components/Posts.vue'));
+Vue.component('staff', require('./components/Staff.vue'));
+
 
 const app = new Vue({
   el: '#app',
   router,
   data: {
+    search: '',
     active_el:0
   },
   methods: {
+    searchit: _.debounce(() => {
+        Fire.$emit('searching');
+    },1000),
     activate:function(el){
         this.active_el = el;
     }
