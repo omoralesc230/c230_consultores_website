@@ -27,7 +27,9 @@
                     </div>
                     <div class="row">
                       <div class="col">
-                        <button class="btn btn-link" @click="showModal(vacancy.id)">Leer más <i class="fas fa-angle-right ml-1"></i></button>
+                        <router-link :to="'/vacancy/'+vacancy.id" class="btn btn-link">
+                          Leer más <i class="fas fa-angle-right ml-1"></i>
+                        </router-link>
                       </div>
                     </div>
                   </div>

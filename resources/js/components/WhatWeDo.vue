@@ -14,6 +14,13 @@
   .half-height{
     height: 40vh;
   }
+  .chess {
+    padding: 10%;
+  }
+  .particles-content{
+    position: absolute;
+    padding: 10%;
+  }
 </style>
 <template>
   <div>
@@ -22,22 +29,28 @@
       <div class="col bg-grey-black">
         <div class="container">
           <div class="row justify-content-md-center align-items-center full-height">
-            <div class="col-sm-12 col-md-10  col-lg-10 text-light text-center">
-              <h2>C230 Consultores</h2>
-              <h1 class="display-4">¿Qué hacemos?</h1>
-              <h2>11 años generando información para impulsar la mejor toma de decisiones</h2>
-              <div class="row">
+            <div class="col-sm-12 col-md-10 col-lg-10 text-light text-center">
+              <div class="row justify-content-md-center">
                 <div class="col-md-4">
-                  <p>Precisión en tiempos y entregables</p>
-                </div>
-                <div class="col-md-4">
-                  <h1>Nuestros valores</h1>
-                </div>
-                <div class="col-md-4">
-                  <p>Flexibilidad en selección de metodologías para entregar resultados</p>
+                  <img src="/img/whatwedo/svg/hexagon.svg" alt="circles" style="width:40%;">
+                  <p>Generamos insumos para apoyar la toma de decisiones de nuestros clientes</p>
                 </div>
               </div>
-              <p>Excelencia e innovación en procesos</p>
+              <h2 class="font-weight-light">C230 Consultores</h2>
+              <h1 class="display-4 font-weight-bold">¿Qué hacemos?</h1>
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/img/whatwedo/svg/circles.svg" alt="circles">
+                  <p>Ayudamos a resolver problemas</p>
+                </div>
+                <div class="col-md-8">
+                  <img src="/img/whatwedo/svg/line.svg" alt="line">
+                </div>
+                <div class="col-md-2">
+                  <img src="/img/whatwedo/svg/triangle.svg" alt="triangle">
+                  Añadimos valor al trabajo de nuestros clientes
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -48,83 +61,175 @@
     <div class="row">
       <div class="col d-none d-md-block sidenav-space"></div>
       <div class="col bg-white">
-        <div class="container">
-          <div class="row justify-content-md-center align-items-center mt-5">
-            <div class="col-sm-12 col-md-6  col-lg-6">
-              <h1 class="display-4">Incidencia</h1>
-              <hr>
-              <p>
-                Nosotros proponemos contribuir a la generación e implementación de políticas, intervenciones y programas que favorezcan de manera significativa y sustentable el desarrollo económico, la reducción de la pobreza y la igualdad de oportunidades.
-              <p>
-                Nos motiva pensar que nuestro quehacer fortalece a la región Latinoamericana, y en particular a los países en los que operamos.
+        <div class="row">
+          <div class="container">
+            <h1 class="mt-4 text-center">¿En qué trabajamos?</h1>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 bg-grey-black">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/svg/strategies.svg" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+              <h4 class="text-white text-center text-uppercase mt-4">Estrategias</h4>
+              <p class="text-white">
+                Diseño, evaluación, análisis e implementación de programas, indicadores y soluciones que redunden en el beneficio de la sociedad, la economía y el medio ambiente.
               </p>
             </div>
-            <div class="col-sm-12 col-md-6  col-lg-6">
-              <img src="/img/aboutus/coins.jpg" class="img-fluid rounded" alt="Coins">
+          </div>
+          <div class="col-md-6">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/svg/public_policies.svg" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+              <h4 class="text-center text-uppercase mt-4">Políticas públicas</h4>
+              <p>
+                Buscamos alinear intereses de diferentes grupos políticos sociales y económicos bajo una visión común que les permita desarrollarse y prosperar sosteniblemente.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 bg-grey-black order-1 order-md-2">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/svg/public_initiatives.svg" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+              <h4 class="text-white text-center text-uppercase mt-4">Iniciativas públicas</h4>
+              <p class="text-white">
+                Trabajamos en proyectos que involucran al gobierno y que tienen con fin último un beneficio positivo en México.
+              </p>
+            </div>}
+          </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/svg/public_problems.svg" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+              <h4 class="text-center text-uppercase mt-4">Problemas públicos</h4>
+              <p>
+                Analizamos recursos y oportunidades de desarrollo que afecten a la calidad de vida de las personas, comunidades y el entorno que las sostiene.
+              </p>
             </div>
           </div>
         </div>
       </div>
       <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col d-none d-md-block sidenav-space"></div>
+      <div class="col bg-white" style="min-height: 60vh;">
+        <div class="container particles-content">
+          <h1>Soluciones digitales</h1>
+          <hr>
+          <div class="row justify-content-md-center align-items-center" style="margin-top:3rem;">
+            <div class="col-sm-12 col-md-10 col-lg-10">
+              <h4 class="text-uppercase text-center">¿Qué hacemos?</h4>
+              <p class="text-center">
+                Diseñamos e implementamos soluciones digitales para innovar en estrategias, políticas e iniciativas públicas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <vue-particles
+        color="#ff762b"
+        :particleOpacity="0.7"
+        :particlesNumber="150"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push">
+        </vue-particles>
+      </div>
     </div>
     <!-- /.row -->
     <div class="row">
       <div class="col d-none d-md-block sidenav-space"></div>
       <div class="col bg-white">
-        <div class="container">
-          <div class="row justify-content-md-center align-items-center mt-5 mb-5">
-            <div class="col-sm-12 col-md-6  col-lg-6">
-              <img src="/img/aboutus/arrow.jpg" class="img-fluid rounded" alt="Arrow">
+        <div class="row">
+          <div class="col-md-6 bg-grey-black">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/hexagon.png" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
             </div>
-            <div class="col-sm-12 col-md-6  col-lg-6">
-              <h1 class="display-4">Historia</h1>
-              <hr>
-              <p>
-                11 años de experiencia
-              <p>
-                C230 Consultores nació como el brazo consultor de Fundación IDEA, con el propósito de extender la gama de servicios ofrecidos a clientes públicos y privados en áreas de fomentar el desarrollo social y económico de América Latina y México.
-              </p>
+          </div>
+          <div class="col-md-6">
+            <div class="container mb-4 chess">
+              <h4 class="mt-4">Ideación de soluciones digitales basadas en principios de diseño centrado en el usuario:</h4>
+              <ul>
+                <li>Aplicaciones web</li>
+                <li>Aplicaciones móviles</li>
+                <li>Diseño de bases de datos y API's</li>
+                <li>Visualización de datos</li>
+                <li>Plataformas digitales para monitoreo de indicadores</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      <!-- /.col -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col d-none d-md-block sidenav-space"></div>
-      <div class="col bg-grey-black">
-        <div class="container">
-          <div class="row justify-content-md-center align-items-center full-height">
-            <div class="col-sm-12 col-md-10  col-lg-10 text-light text-center">
-              <h1 class="display-4">Nuestro talento, nuestro valor</h1>
-              <hr>
-              <p>
-                En C230 Consultores contamos con un equipo de trabajo multidisciplinario, con amplia experiencia y credenciales académicas de las mejores universidades nacionales (UNAM, CIDE, Tecnológico de Monterrey, Universidad Iberoamericana), e internacionales (Columbia, Harvard, Oxford, NYU, MIT, Stanford, Chicago, University of Toronto y University of Notre Dame).
-              </p>
-              <p>
-                Nuestros valores se basan en la excelencia e innovación en procesos, solidez en el manejo de tiempos y flexibilidad para entregar resultados específicos y en sintonía a las necesidades de nuestros clientes.
-              </p>
-              <p>
-                Nuestro objetivo es lograr desarrollar las soluciones que más valor aporten a Latinoamérica y a nuestros clientes.
-              </p>
+        <div class="row">
+          <div class="col-md-6 bg-grey-black order-1 order-md-2">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/circle.png" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+            </div>
+          </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <div class="container mb-4 chess">
+              <h4 class="mt-4">Diseño de experiencias e interfaces para soluciones digitales (UI/UX):</h4>
+              <ul>
+                <li>User Interface</li>
+                <li>User Experience</li>
+                <li>Principios de Interación para plataformas</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      <!-- /.col -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col d-none d-md-block sidenav-space"></div>
-      <div class="col" style="background-image: url('/img/aboutus/zocalo.jpg');">
-        <div class="container">
-          <div class="row justify-content-md-center align-items-center half-height">
-            <div class="col-sm-12 col-md-8  col-lg-8 text-light text-center">
-              <h1 class="font-weight-light">Tenemos un objetivo claro:</h1>
-              <p>
-                Fomentar el desarrollo social y económico de América Latina y México.
-              </p>
+        <div class="row">
+          <div class="col-md-6 bg-grey-black">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/diamond.png" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="container mb-4 chess">
+              <h4 class="mt-4">Desarrollo e implementación de soluciones digitales</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 bg-grey-black order-1 order-md-2">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/triangle.png" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+            </div>
+          </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <div class="container mb-4 chess">
+              <h4 class="mt-4">Desarrollo y prototipado de software y arquitectura de información</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 bg-grey-black">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/double_cube.png" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="container mb-4 chess">
+              <h4 class="mt-4">Implementación de metodología ágil para desarrollo de software</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 bg-grey-black order-1 order-md-2">
+            <div class="container mb-4 chess">
+              <v-lazy-image src="/img/whatwedo/cube.png" src-placeholder="" class="img-fluid mx-auto d-block mt-4" style="width:40%;" alt="strategies"/>
+            </div>
+          </div>
+          <div class="col-md-6 order-2 order-md-1">
+            <div class="container mb-4 chess">
+              <h4 class="mt-4">Talleres de diseño estratégico y metodologías de diseño de productos y servicios</h4>
             </div>
           </div>
         </div>
@@ -138,6 +243,11 @@
 <script>
 export default {
   mounted() {
+    if (this.$route.path == "/") {
+      this.$parent.current_url = 1;
+    } else {
+      this.$parent.current_url = 0;
+    }
     console.log('Component mounted.')
   }
 }

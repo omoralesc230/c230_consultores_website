@@ -50,7 +50,7 @@
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{ url('/') }}" class="brand-link">
-          <img src="./img/logo_light.png" alt="c230 consultores logo" class="brand-image elevation-3" style="opacity: .8;max-width: 40px;margin-top: 0 !important;">
+          <img src="/img/logo_light.png" alt="c230 consultores logo" class="brand-image elevation-3" style="opacity: .8;max-width: 40px;margin-top: 0 !important;">
           <span class="brand-text font-weight-light">Admin Panel</span>
         </a>
 
@@ -59,7 +59,7 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              <img src="./img/profile_pics/{{ Auth::user()->photo }}" class="img-circle elevation-2" alt="User Image">
+              <img src="/img/profile_pics/{{ Auth::user()->photo }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
               <a href="" class="d-block">{{ Auth::user()->name }}</a>
@@ -90,6 +90,12 @@
                      <router-link to="/users" class="nav-link">
                        <i class="fas fa-users nav-icon"></i>
                        <p>Users</p>
+                     </router-link>
+                   </li>
+                   <li class="nav-item">
+                     <router-link to="/clients" class="nav-link">
+                       <i class="fas fa-handshake"></i>
+                       <p>Clients</p>
                      </router-link>
                    </li>
                    <li class="nav-item">

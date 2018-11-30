@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top">
       <div class="container">
         <a class="navbar-brand d-block d-md-none" href="{{ url('/') }}">
-          <img src="./img/logo_dark.png" alt="c230 consultores logo" class="brand-image">
+          <img src="/img/logo_dark.png" alt="c230 consultores logo" class="brand-image">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
@@ -97,27 +97,28 @@
     </div>
   </nav>
 
-  <ul class="nav flex-column sidenav app-sidenav mt-5">
-    <li class="nav-item mt-3" @click="activate(0)">
+  <ul class="nav flex-column sidenav app-sidenav mt-5" id="app-sidenav">
+    <li class="nav-item mt-3" @click="activate(0)" id="logo_dark">
       <a href="{{ url('/') }}" class="nav-link">
-        <img src="./img/logo_dark.png" alt="c230 consultores logo">
+        <img id="logodark" src="/img/logo_dark.png" alt="c230 consultores logo" :class="{ 'd-none' : current_url == 1 }">
+        <img id="logowhite" src="/img/logo_light.png" alt="c230 consultores logo" class="d-none" :class="{ 'd-block' : current_url == 1 }">
       </a>
     </li>
     <li class="nav-item mt-2" @click="activate(1)" :class="{ activesn : active_el == 1 }">
-      <router-link to="/aboutus" class="nav-link text-uppercase">
+      <router-link id="aboutus" to="/aboutus" class="nav-link text-uppercase" :class="{ 'text-white' : current_url == 1 }">
         quiénes somos
       </router-link>
     </li>
     <li class="nav-item mt-2" @click="activate(2)" :class="{ activesn : active_el == 2 }">
-      <router-link to="/whatwedo" class="nav-link text-uppercase">
+      <router-link id="whatwedo" to="/whatwedo" class="nav-link text-uppercase" :class="{ 'text-white' : current_url == 1 }">
         qué hacemos
       </router-link>
     </li>
     <li class="nav-item mt-2" @click="activate(3)" :class="{ activesn : active_el == 3 }">
-      <a class="nav-link text-uppercase" href="#">medios</a>
+      <a id="vacancies" class="nav-link text-uppercase" :class="{ 'text-white' : current_url == 1 }" href="#">medios</a>
     </li>
-    <li class="nav-item mt-2" @click="activate(4)" :class="{ activesn : active_el == 4 }">
-      <a class="nav-link text-uppercase" href="#">contacto</a>
+    <li class="nav-item mt-2" @click="activate(4)" :class="{ activesn : active_el == 4}">
+      <a id="contact" class="nav-link text-uppercase" :class="{ 'text-white' : current_url == 1 }" href="#">contacto</a>
     </li>
   </ul>
 
@@ -161,5 +162,11 @@
     </div>
   </footer>
 </div>
+
+<script type="text/javascript" defer>
+// sidenav
+
+//
+</script>
 </body>
 </html>

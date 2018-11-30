@@ -15,6 +15,10 @@ class Post extends Model
    * @var array
    */
   protected $fillable = [
-      'title', 'description', 'type', 'featured', 'picture'
+      'title', 'description', 'type', 'featured', 'picture', 'order'
   ];
+
+  public function costumers() {
+    return $this->belongsToMany('App\Costumer');
+  }
 }

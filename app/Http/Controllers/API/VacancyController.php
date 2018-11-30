@@ -15,7 +15,7 @@ class VacancyController extends Controller
    */
   public function __construct()
   {
-      $this->middleware('auth:api', ['except' => ['index']]);
+      $this->middleware('auth:api', ['except' => ['index', 'show']]);
   }
   /**
   * Display a listing of the resource.
@@ -24,7 +24,7 @@ class VacancyController extends Controller
   */
   public function index()
   {
-    return Vacancy::latest()->paginate(5);
+    return Vacancy::with('applications')->latest()->paginate(10);
   }
 
   /**
@@ -42,6 +42,7 @@ class VacancyController extends Controller
 
     return Vacancy::create([
       'name' => $request['name'],
+      'requirements' => $request['requirements'],
       'description' => $request['description'],
       'department' => $request['department'],
       'status' => $request['status'],
@@ -56,8 +57,7 @@ class VacancyController extends Controller
   */
   public function show($id)
   {
-    $vacancy = Vacancy::findOrFail($id);
-    return $vacancy;
+    return Vacancy::with('applications')->find($id);
   }
 
   /**

@@ -38,28 +38,28 @@
               <h2 class="font-weight-light mt-4">C230 Consultores</h2>
               <h1 class="display-4 font-weight-bold">¿Quiénes somos?</h1>
               <h2 class="font-weight-light">11 años generando información para impulsar la mejor toma de decisiones</h2>
-              <img src="/img/aboutus/svg/lineDown.svg" class="img-fluid line-down mb-4" alt="line down">
+              <v-lazy-image src="/img/aboutus/svg/lineDown.svg" class="img-fluid line-down mb-4" alt="line down"/>
               <div class="row">
                 <div class="col-md-2">
                   <div class="row mb-2">
-                    <img src="/img/aboutus/svg/diamond.svg" class="img-fluid line-down mx-auto d-block figure" alt="line down">
+                    <v-lazy-image src="/img/aboutus/svg/diamond.svg" src-placeholder="" class="img-fluid line-down mx-auto d-block figure" alt="line down"/>
                   </div>
                   <div class="row">
                     <p>Precisión en tiempos y entregables</p>
                   </div>
                 </div>
                 <div class="col-md-2">
-                  <img src="/img/aboutus/svg/lineLeft.svg" class="img-fluid" alt="line down">
+                  <v-lazy-image src="/img/aboutus/svg/lineLeft.svg" class="img-fluid" alt="line down"/>
                 </div>
                 <div class="col-md-4">
                   <h1>Nuestros valores</h1>
                 </div>
                 <div class="col-md-2">
-                  <img src="/img/aboutus/svg/lineRight.svg" class="img-fluid" alt="line down">
+                  <v-lazy-image src="/img/aboutus/svg/lineRight.svg" class="img-fluid" alt="line down"/>
                 </div>
                 <div class="col-md-2">
                   <div class="row mb-2">
-                    <img src="/img/aboutus/svg/hexagon.svg" class="img-fluid line-down mx-auto d-block figure" alt="line down">
+                    <v-lazy-image src="/img/aboutus/svg/hexagon.svg" src-placeholder="" class="img-fluid line-down mx-auto d-block figure" alt="line down"/>
                   </div>
                   <div class="row">
                     <p>Flexibilidad en selección de metodologías para entregar resultados</p>
@@ -67,9 +67,9 @@
                 </div>
               </div>
               <div class="row d-md-block last-line">
-                <img src="/img/aboutus/svg/lineDown.svg" class="img-fluid line-down mb-4" alt="line down">
+                <v-lazy-image src="/img/aboutus/svg/lineDown.svg" src-placeholder="" class="img-fluid line-down mb-4" alt="line down"/>
                 <div class="row mb-2">
-                  <img src="/img/aboutus/svg/flower.svg" class="img-fluid line-down mx-auto d-block figure" alt="line down">
+                  <v-lazy-image src="/img/aboutus/svg/flower.svg" src-placeholder="" class="img-fluid line-down mx-auto d-block figure" alt="line down"/>
                 </div>
                 <p>Excelencia e innovación en procesos</p>
               </div>
@@ -95,7 +95,7 @@
               </p>
             </div>
             <div class="col-sm-12 col-md-6  col-lg-6">
-              <img src="/img/aboutus/coins.jpg" class="img-fluid rounded" alt="Coins">
+              <v-lazy-image src="/img/aboutus/coins.jpg" src-placeholder="" class="img-fluid rounded" alt="Coins"/>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="container">
           <div class="row justify-content-md-center align-items-center mt-5 mb-5">
             <div class="col-sm-12 col-md-6  col-lg-6">
-              <img src="/img/aboutus/arrow.jpg" class="img-fluid rounded" alt="Arrow">
+              <v-lazy-image src="/img/aboutus/arrow.jpg" src-placeholder="" class="img-fluid rounded" alt="Arrow"/>
             </div>
             <div class="col-sm-12 col-md-6  col-lg-6">
               <h1 class="font-weight-light">Historia</h1>
@@ -187,6 +187,11 @@
 <script>
 export default {
   mounted() {
+    if (this.$route.path == "/") {
+      this.$parent.current_url = 1;
+    } else {
+      this.$parent.current_url = 0;
+    }
     console.log('Component mounted.')
   }
 }

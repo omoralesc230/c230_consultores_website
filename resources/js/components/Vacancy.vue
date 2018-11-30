@@ -4,6 +4,9 @@
     right: 40px;
     bottom: 40px;
   }
+  .pointer{
+    cursor: pointer;
+  }
 </style>
 
 <template>
@@ -38,6 +41,7 @@
                     <th>Department</th>
                     <th>Status</th>
                     <th>Created At</th>
+                    <th>Applications</th>
                     <th>Modify</th>
                   </tr>
                 </thead>
@@ -48,6 +52,9 @@
                     <td>{{ vacancy.department | upText }}</td>
                     <td>{{ vacancy.status | upText }}</td>
                     <td>{{ vacancy.created_at | myDate }}</td>
+                    <td>
+                      <span @click="showModal(vacancy.id)" class="badge badge-pill badge-secondary pointer">{{ vacancy.applications.length }}</span>
+                    </td>
                     <td>
                       <a class="btn btn-primary" @click="editModal(vacancy)">
                         <i class="fas fa-edit"></i>
@@ -147,6 +154,54 @@
         </div>
       </div>
     </div>
+
+    <!-- Show Modal -->
+    <div class="modal fade" id="vacancyModal" tabindex="-1" role="dialog" aria-labelledby="vacancyModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="showVacancyLabel">{{ vacancy.name }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="accordion" id="accordionApplications">
+                <div class="card" v-for="application in vacancy.applications" :key="application.id">
+                  <div class="card-header" :id="'heading'+application.id">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" :data-target="'#collapse'+application.id" aria-expanded="true" :aria-controls="'collapse'+application.id">
+                        {{ application.name }} ({{ application.email }})
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div :id="'collapse'+application.id" class="collapse" :aria-labelledby="'heading'+application.id" data-parent="#accordionApplications">
+                    <div class="card-body">
+                      <p>{{ application.source }}</p>
+                      <p>{{ application.situation }}</p>
+                      <p>{{ application.university }}</p>
+                      <p>{{ application.grade_average }}</p>
+                      <p>{{ application.topics }}</p>
+                      <p>{{ application.stata }}</p>
+                      <p>{{ application.plans }}</p>
+                      <p>{{ application.mexican }}</p>
+                      <p>{{ application.reason_to_work }}</p>
+                      <p>{{ application.reason_to_hire }}</p>
+                      <p>{{ application.comments }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -161,6 +216,7 @@ export default {
     return {
       editmode: false,
       vacancies: {},
+      vacancy: {},
       form: new Form({
         id: '',
         name: '',
@@ -179,6 +235,10 @@ export default {
     },
     loadVacancies(){
       axios.get("api/vacancy").then(({data}) => (this.vacancies = data));
+    },
+    showModal(id){
+      $('#vacancyModal').modal('show');
+      axios.get('/api/vacancy/'+id).then(({data}) => (this.vacancy = data));
     },
     newModal(){
       this.editmode = false;

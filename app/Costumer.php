@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\HasApiTokens;
 
-class Vacancy extends Model
+class Costumer extends Model
 {
   use HasApiTokens;
 
@@ -15,11 +15,10 @@ class Vacancy extends Model
    * @var array
    */
   protected $fillable = [
-      'name', 'description', 'department', 'status', 'requirements'
+      'name', 'description', 'picture'
   ];
 
-  public function applications()
-  {
-    return $this->hasMany('App\Application');
+  public function posts() {
+    return $this->belongsToMany('App\Post');
   }
 }

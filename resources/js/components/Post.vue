@@ -34,16 +34,21 @@
             <table class="table table-hover">
               <thead>
                 <tr>
+                  <th></th>
                   <th>Thumbnail</th>
                   <th>Title</th>
                   <th>Type</th>
                   <th>Created At</th>
                   <th>Featured</th>
+                  <th>Order</th>
                   <th>Modify</th>
                 </tr>
               </thead>
-              <tbody>
+              <draggable :list="posts.data" :options="{animation:200, handle:'.my-handle'}" :element="'tbody'" @change="updateOrder">
                 <tr v-for="post in posts.data" :key="post.id">
+                  <td>
+                    <i class="fas fa-arrows-alt my-handle"></i>
+                  </td>
                   <td>
                     <img class="post-img" :src="'/img/posts/'+post.picture" alt="post picture">
                   </td>
@@ -54,6 +59,7 @@
                     <i v-if="post.featured == 1" class="fas fa-star text-yellow"></i>
                     <i v-else="post.featured" class="fas fa-star text-grey"></i>
                   </td>
+                  <td>{{ post.order }}</td>
                   <td>
                     <a class="btn btn-primary" @click="editModal(post)">
                       <i class="fas fa-edit"></i>
@@ -65,7 +71,7 @@
                     </a>
                   </td>
                 </tr>
-              </tbody>
+              </draggable>
             </table>
           </div>
           <div class="card-footer">
@@ -123,6 +129,19 @@
                       <label class="form-check-label" for="exampleCheck2">Featured</label>
                     </div>
                   </div>
+
+                  <div class="form-group">
+                    <input v-model="form.order" type="number" name="order" placeholder="Order"
+                      class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
+                    <has-error :form="form" field="order"></has-error>
+                  </div>
+
+                  <div>
+                    <label class="typo__label">Clients</label>
+                    <multiselect v-model="selectedCostumers" :options="costumers" :multiple="true" :close-on-select="false" :clear-on-select="false" :preserve-search="true" placeholder="Pick some" label="name" track-by="name" :preselect-first="true">
+                      <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single" v-if="values.length &amp;&amp; !isOpen">{{ values.length }} selected client(s)</span></template>
+                    </multiselect>
+                  </div>
                 </div>
               </div>
             </div>
@@ -140,22 +159,52 @@
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+import Multiselect from 'vue-multiselect'
+
 export default {
+  components: {
+    draggable, Multiselect
+  },
   data() {
     return {
       editmode: false,
       posts: {},
+      post: {},
+      selectedCostumers:[],
+      costumers: [],
       form: new Form({
         id: '',
         title: '',
         type: '',
         description: '',
         featured: 0,
-        picture: ''
+        picture: '',
+        order: '',
       })
     }
   },
   methods: {
+    updateOrder(){
+      this.posts.data.map((post, index) => {
+        post.order = index + 1;
+      })
+      this.$Progress.start();
+      axios.put('api/ordered',
+        {posts:this.posts.data}
+      )
+      .then(() => {
+        toast({
+          type: 'success',
+          title: 'Post order updated successfully'
+        })
+        Fire.$emit('AfterCreate');
+        this.$Progress.finish();
+      })
+      .catch(() => {
+        this.$Progress.fail();
+      });
+    },
     getResults(page = 1) {
       axios.get('api/post?page=' + page).then(response => {
         this.posts = response.data;
@@ -163,10 +212,13 @@ export default {
     },
     loadPosts(){
       axios.get("api/post").then(({data}) => (this.posts = data));
+      axios.get("api/costumer").then(({data}) => (this.costumers = data.data));
     },
     newModal(){
       this.editmode = false;
+      this.selectedCostumers = [];
       this.form.reset();
+      this.form.order = this.posts.data.length + 1;
       $('#postsModal').modal('show');
     },
     createPost(){
@@ -189,13 +241,15 @@ export default {
     },
     editModal(post){
       this.editmode = true;
+      this.selectedCostumers = [];
       this.form.reset();
       $('#postsModal').modal('show');
       this.form.fill(post);
     },
     updatePost(){
       this.$Progress.start();
-      this.form.put('api/post/'+this.form.id).then(() =>{
+      this.form.put('api/post/'+this.form.id,
+      ).then(() =>{
         //successfull
         $('#postsModal').modal('hide');
         swal(
@@ -208,6 +262,7 @@ export default {
       }).catch(() => {
         this.$Progress.fail();
       });
+
     },
     updatePicture(e) {
       // console.log('uploading');

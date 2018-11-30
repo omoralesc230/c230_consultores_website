@@ -9,8 +9,14 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-// configuration of wysiwyg
+// configure particles js
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
+//
 
+// configuration of lazy image
+import { VLazyImagePlugin } from "v-lazy-image";
+Vue.use(VLazyImagePlugin);
 //
 
 // moment configuration starts
@@ -63,8 +69,10 @@ let routes = [
   { path: '/dashboard', component: require('./components/Dashboard.vue') },
   { path: '/developer', component: require('./components/Developer.vue') },
   { path: '/users', component: require('./components/Users.vue') },
+  { path: '/clients', component: require('./components/Costumer.vue') },
   { path: '/media', component: require('./components/Media.vue') },
   { path: '/vacancy', component: require('./components/Vacancy.vue') },
+  { path: '/vacancy/:id', component: require('./components/VacancySingle.vue') },
   { path: '/post', component: require('./components/Post.vue') },
   { path: '/post/:id', component: require('./components/PostSingle.vue') },
   { path: '/profile', component: require('./components/Profile.vue') },
@@ -135,7 +143,6 @@ Vue.component(
 
 Vue.component('editor', require('./components/Editor.vue'));
 Vue.component('vacancies', require('./components/VacanciesComponent.vue'));
-Vue.component('posts', require('./components/Posts.vue'));
 Vue.component('staff', require('./components/Staff.vue'));
 
 
@@ -144,7 +151,8 @@ const app = new Vue({
   router,
   data: {
     search: '',
-    active_el:0
+    active_el:0,
+    current_url: 'prueba'
   },
   methods: {
     searchit: _.debounce(() => {

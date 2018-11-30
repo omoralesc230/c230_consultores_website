@@ -1,26 +1,46 @@
 <style>
-
+  .sidenav-space{
+    max-width:250px;
+  }
+  .full-height{
+    min-height:100vh;
+  }
 </style>
 <template>
   <div>
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Manage Posts</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Posts</li>
-            </ol>
+    <div class="row">
+      <div class="col d-none d-md-block sidenav-space"></div>
+      <div class="col bg-secondary">
+        <div class="container">
+          <div class="row justify-content-md-center align-items-center full-height">
+            <div class="col-md-10">
+              <p class="text-uppercase">{{ post.type }}</p>
+              <h1 class="">{{ post.title }}</h1>
+              <p>{{ post.description }}</p>
+            </div>
           </div>
         </div>
       </div>
+      <!-- /.col -->
     </div>
+    <!-- /.row -->
   </div>
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      post: {},
+    }
+  },
+  created() {
+    if (this.$route.path == "/") {
+      this.$parent.current_url = 1;
+    } else {
+      this.$parent.current_url = 0;
+    }
+    axios.get('/api/post/'+this.$route.params.id).then(({data}) => (this.post = data));
+  }
+}
 </script>

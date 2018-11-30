@@ -14,6 +14,9 @@ $fa-font-path: "../webfonts";
 // AdminLTE
 @import '~admin-lte/dist/css/adminlte.css';
 
+//multiselect
+@import '~vue-multiselect/dist/vue-multiselect.min.css';
+
 // More Fontawesome
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
@@ -144,4 +147,12 @@ $fa-font-path: "../webfonts";
   @include media-breakpoint-up(xl) {
     height: 60vh;
   }
+}
+
+.v-lazy-image {
+  filter: blur(10px);
+  transition: filter 0.7s;
+}
+.v-lazy-image-loaded {
+  filter: blur(0);
 }

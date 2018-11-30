@@ -24,10 +24,55 @@
   .h-100{
     height: 100vh !important;
   }
+  .carousel-indicators .active{
+    background-color: #ff7900 !important;
+  }
+
+  .carousel-indicators li{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+  }
+
+  .carousel-caption{
+    bottom: 0;
+    top: 180px;
+    text-align: left;
+  }
 </style>
 <template>
   <div>
-    <posts></posts>
+    <div class="row">
+      <div class="col">
+        <!-- carousel starts -->
+        <div id="Projectscarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#Projectscarousel" v-for="featuredPost in featuredPosts" :key="featuredPost.id" :data-slide-to="featuredPost.order-1" :class="{ 'active': featuredPost.order === 1 }"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div v-for="featuredPost in featuredPosts" :key="featuredPost.id" :class="{ 'active': featuredPost.order === 1 }" class="carousel-item h-100" :style="{ 'background-image': 'url(/img/posts/' + featuredPost.picture + ')' }" style="background-position: center;background-repeat: no-repeat;background-size: cover;min-height:210px;">
+              <div class="carousel-caption">
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <p class="text-uppercase">{{ featuredPost.type }} destacado</p>
+                    <h1 class="">{{ featuredPost.title }}</h1>
+                    <p class="d-none d-md-block">
+                      {{featuredPost.description}}
+                    </p>
+                    <router-link :to="'/post/'+featuredPost.id" class="btn btn-orange mt-2">
+                      Saber más...
+                    </router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- carousel ends -->
+      </div>
+    </div>
     <div class="row">
       <div class="col d-none d-md-block sidenav-space"></div>
       <div class="col bg-grey-black">
@@ -74,7 +119,7 @@
               <div class="row justify-content-md-center align-items-center our-practice-home">
                 <div class="col-sm-12 col-md-10 col-lg-10">
                   <div class="card" style="border:0px;">
-                    <img class="card-img-top" src="/img/home/card_img.jpg" alt="Card image cap">
+                    <v-lazy-image class="card-img-top" src="/img/home/card_img.jpg" src-placeholder="" alt="Card image cap"/>
                     <div class="card-body">
                       <h5 class="card-title text-uppercase">nuestra práctica</h5>
                       <p class="card-text">
@@ -117,7 +162,7 @@
       <div class="col" style="background-color:white;">
         <div class="container mb-4 mt-4">
           <div class="row justify-content-around align-items-center" style="padding:20px;">
-            <div class="col-sm-10 col-md-6 col-lg-4 about-cards order-last">
+            <div class="col-sm-10 col-md-6 col-lg-4 about-cards order-1 order-md-2">
               <h1 class="font-weight-light">¿Para Quiénes?</h1>
               <hr>
               <ul>
@@ -128,8 +173,8 @@
                 <li>Organizaciosin fines de lucro</li>
               </ul>
             </div>
-            <div class="col-sm-10 col-md-6 col-lg-4">
-              <img src="/img/home/city.png" class="img-fluid" alt="city">
+            <div class="col-sm-10 col-md-6 col-lg-4 order-2 order-md-1">
+              <v-lazy-image src="/img/home/city.png" src-placeholder="" class="img-fluid" alt="city"/>
             </div>
           </div>
         </div>
@@ -154,7 +199,7 @@
               </ul>
             </div>
             <div class="col-sm-10 col-md-6 col-lg-4">
-              <img src="/img/home/graph.png" class="img-fluid" alt="city">
+              <v-lazy-image src="/img/home/graph.png" src-placeholder="/img/hourglass.png" class="img-fluid" alt="city"/>
             </div>
           </div>
         </div>
@@ -167,15 +212,15 @@
       <div class="col" style="background-color:white;">
         <div class="container mb-4">
           <div class="row justify-content-around align-items-center" style="padding:20px;">
-            <div class="col-sm-10 col-md-6 col-lg-4 about-cards order-last">
+            <div class="col-sm-10 col-md-6 col-lg-4 about-cards order-1 order-md-2">
               <h1 class="font-weight-light">Proyectos</h1>
               <hr>
               <p>
                 Desde hace 11 años hemos realizado proyectos en diversos sectores y para múltiples clientes lo cual nos ha brindado una experiencia única en consultoría en Latinoamérica.
               </p>
             </div>
-            <div class="col-sm-10 col-md-6 col-lg-4">
-              <img src="/img/home/laptop.png" class="img-fluid" alt="city">
+            <div class="col-sm-10 col-md-6 col-lg-4 order-2 order-md-1">
+              <v-lazy-image src="/img/home/laptop.png" src-placeholder="/img/hourglass.png" class="img-fluid" alt="city"/>
             </div>
           </div>
         </div>
@@ -188,8 +233,69 @@
 
 <script>
 export default {
+  data() {
+    return {
+      featuredPosts: {}
+    }
+  },
+  methods: {
+    loadFeatured(){
+      if (this.$route.path == "/") {
+        this.$parent.current_url = 1;
+      } else {
+        this.$parent.current_url = 0;
+      }
+      axios.get("api/featured").then(({data}) => (this.featuredPosts = data));
+    }
+  },
   mounted() {
-    console.log('Component mounted.')
+    this.loadFeatured();
+
+    //sidenav change
+    let logodark =  document.getElementById("logodark");
+    let logowhite =  document.getElementById("logowhite");
+    let aboutus =  document.getElementById("aboutus");
+    let whatwedo =  document.getElementById("whatwedo");
+    let vacancies =  document.getElementById("vacancies");
+    let contact =  document.getElementById("contact");
+
+    if (this.$parent.current_url == 1) {
+      window.onscroll = function () {
+        if (document.body.scrollTop >= 350 || document.documentElement.scrollTop > 350) {
+          logodark.classList.remove("d-none");
+          logowhite.classList.remove("d-block");
+          aboutus.classList.remove("text-white");
+          whatwedo.classList.remove("text-white");
+          vacancies.classList.remove("text-white");
+          contact.classList.remove("text-white");
+        } else {
+          logodark.classList.add("d-none");
+          logowhite.classList.add("d-block");
+          aboutus.classList.add("text-white");
+          whatwedo.classList.add("text-white");
+          vacancies.classList.add("text-white");
+          contact.classList.add("text-white");
+        }
+      };
+    } else if (this.$parent.current_url == 1) {
+      window.onscroll = function () {
+        if (document.body.scrollTop >= 350 || document.documentElement.scrollTop > 350) {
+          logodark.classList.remove("d-none");
+          logowhite.classList.remove("d-block");
+          aboutus.classList.remove("text-white");
+          whatwedo.classList.remove("text-white");
+          vacancies.classList.remove("text-white");
+          contact.classList.remove("text-white");
+        } else {
+          logodark.classList.remove("d-none");
+          logowhite.classList.remove("d-block");
+          aboutus.classList.remove("text-white");
+          whatwedo.classList.remove("text-white");
+          vacancies.classList.remove("text-white");
+          contact.classList.remove("text-white");
+        }
+      };
+    }
   }
 }
 </script>

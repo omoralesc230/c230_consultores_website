@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Post;
+use App\Costumer;
 
-class PostController extends Controller
+class CostumerController extends Controller
 {
   /**
   * Create a new controller instance.
@@ -15,7 +15,7 @@ class PostController extends Controller
   */
   public function __construct()
   {
-    $this->middleware('auth:api', ['except' => ['show', 'index','featuredPosts']]);
+    $this->middleware('auth:api', ['except' => ['show', 'index']]);
   }
   /**
   * Display a listing of the resource.
@@ -24,17 +24,7 @@ class PostController extends Controller
   */
   public function index()
   {
-    return Post::orderBy('order', 'asc')->paginate(10);
-  }
-
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function featuredPosts()
-  {
-    return Post::where('featured', 1)->orderBy('order', 'asc')->get();
+    return Costumer::latest()->paginate(10);
   }
 
   /**
@@ -46,39 +36,19 @@ class PostController extends Controller
   public function store(Request $request)
   {
     $this->validate($request,[
-      'title' => 'required|string',
-      'description' => 'required'
+      'name' => 'required|string',
+      'description' => 'sometimes'
     ]);
 
     $name = time().'.' . explode('/', explode(':', substr($request->picture, 0, strpos($request->picture, ';')))[1])[1];
-    \Image::make($request->picture)->save(public_path('img/posts/').$name);
+    \Image::make($request->picture)->save(public_path('img/costumers/').$name);
     $request->merge(['picture' => $name]);
 
-    return Post::create([
-      'title' => $request['title'],
-      'type' => $request['type'],
+    return Costumer::create([
+      'name' => $request['name'],
       'description' => $request['description'],
-      'featured' => $request['featured'],
-      'picture' => $name,
-      'order' => $request['order']
+      'picture' => $name
     ]);
-  }
-
-  public function updatePosts(Request $request)
-  {
-    $posts = Post::all();
-
-    foreach ($posts as $post) {
-      $id = $post->id;
-      foreach ($request->posts as $postFrontend) {
-        if ($postFrontend['id'] == $id) {
-          $post->update([
-            'order' => $postFrontend['order']
-          ]);
-        }
-      }
-    }
-    return ['message' => "Success"];
   }
 
   /**
@@ -89,7 +59,7 @@ class PostController extends Controller
   */
   public function show($id)
   {
-    return Post::find($id);
+    return Costumer::find($id);
   }
 
   /**
@@ -101,31 +71,31 @@ class PostController extends Controller
   */
   public function update(Request $request, $id)
   {
-    $post = Post::findOrFail($id);
+    $costumer = Costumer::findOrFail($id);
 
     $this->validate($request,[
-      'title' => 'required|string',
-      'description' => 'required'
+      'name' => 'required|string',
+      'description' => 'sometimes'
     ]);
 
-    $currentPicture = $post->picture;
+    $currentPicture = $costumer->picture;
 
     if ($request->picture != $currentPicture) {
       $name = time().'.' . explode('/', explode(':', substr($request->picture, 0, strpos($request->picture, ';')))[1])[1];
 
-      \Image::make($request->picture)->save(public_path('img/posts/').$name);
+      \Image::make($request->picture)->save(public_path('img/costumers/').$name);
 
       $request->merge(['picture' => $name]);
 
-      $postPicture = public_path('img/posts/').$currentPicture;
+      $postPicture = public_path('img/costumers/').$currentPicture;
       if (file_exists($postPicture)) {
         @unlink($postPicture);
       }
     }
 
-    $post->update($request->all());
+    $costumer->update($request->all());
 
-    return ['message' => 'Updated the post info'];
+    return ['message' => 'Updated the costumer info'];
   }
 
   /**
@@ -136,10 +106,10 @@ class PostController extends Controller
   */
   public function destroy($id)
   {
-    $post = Post::findOrFail($id);
+    $costumer = Costumer::findOrFail($id);
 
-    $post->delete();
+    $costumer->delete();
 
-    return ['message' => 'Post deleted!'];
+    return ['message' => 'Costumer deleted!'];
   }
 }
