@@ -199,7 +199,7 @@
               </ul>
             </div>
             <div class="col-sm-10 col-md-6 col-lg-4">
-              <v-lazy-image src="/img/home/graph.png" src-placeholder="/img/hourglass.png" class="img-fluid" alt="city"/>
+              <v-lazy-image src="/img/home/graph.png" src-placeholder="" class="img-fluid" alt="city"/>
             </div>
           </div>
         </div>
@@ -220,7 +220,7 @@
               </p>
             </div>
             <div class="col-sm-10 col-md-6 col-lg-4 order-2 order-md-1">
-              <v-lazy-image src="/img/home/laptop.png" src-placeholder="/img/hourglass.png" class="img-fluid" alt="city"/>
+              <v-lazy-image src="/img/home/laptop.png" src-placeholder="" class="img-fluid" alt="city"/>
             </div>
           </div>
         </div>
