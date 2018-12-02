@@ -35,11 +35,7 @@ export default {
     }
   },
   created() {
-    if (this.$route.path == "/") {
-      this.$parent.current_url = 1;
-    } else {
-      this.$parent.current_url = 0;
-    }
+    this.$parent.active_el = this.$route.path;
     axios.get('/api/post/'+this.$route.params.id).then(({data}) => (this.post = data));
   }
 }

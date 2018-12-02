@@ -235,67 +235,54 @@
 export default {
   data() {
     return {
-      featuredPosts: {}
+      featuredPosts: {},
+      scrolled: 0
     }
   },
   methods: {
     loadFeatured(){
-      if (this.$route.path == "/") {
-        this.$parent.current_url = 1;
-      } else {
-        this.$parent.current_url = 0;
-      }
       axios.get("api/featured").then(({data}) => (this.featuredPosts = data));
+    },
+    handleScroll () {
+      let logodark = document.getElementById("logodark");
+      let logowhite = document.getElementById("logowhite");
+      let aboutus = document.getElementById("aboutus");
+      let whatwedo = document.getElementById("whatwedo");
+      let vacancies = document.getElementById("vacancies");
+      let contact = document.getElementById("contact");
+      if (document.body.scrollTop >= $(window).height() || document.documentElement.scrollTop > $(window).height()) {
+        console.log("second section");
+        logodark.classList.remove("d-none");
+        logowhite.classList.remove("d-block");
+        aboutus.classList.remove("text-white");
+        whatwedo.classList.remove("text-white");
+        vacancies.classList.remove("text-white");
+        contact.classList.remove("text-white");
+      } else {
+        logodark.classList.add("d-none");
+        logowhite.classList.add("d-block");
+        aboutus.classList.add("text-white");
+        whatwedo.classList.add("text-white");
+        vacancies.classList.add("text-white");
+        contact.classList.add("text-white");
+      }
     }
   },
-  mounted() {
+  created() {
+    this.$parent.active_el = this.$route.path;
+    window.addEventListener('scroll', this.handleScroll);
     this.loadFeatured();
 
-    //sidenav change
-    let logodark =  document.getElementById("logodark");
-    let logowhite =  document.getElementById("logowhite");
-    let aboutus =  document.getElementById("aboutus");
-    let whatwedo =  document.getElementById("whatwedo");
-    let vacancies =  document.getElementById("vacancies");
-    let contact =  document.getElementById("contact");
-
-    if (this.$parent.current_url == 1) {
-      window.onscroll = function () {
-        if (document.body.scrollTop >= 350 || document.documentElement.scrollTop > 350) {
-          logodark.classList.remove("d-none");
-          logowhite.classList.remove("d-block");
-          aboutus.classList.remove("text-white");
-          whatwedo.classList.remove("text-white");
-          vacancies.classList.remove("text-white");
-          contact.classList.remove("text-white");
-        } else {
-          logodark.classList.add("d-none");
-          logowhite.classList.add("d-block");
-          aboutus.classList.add("text-white");
-          whatwedo.classList.add("text-white");
-          vacancies.classList.add("text-white");
-          contact.classList.add("text-white");
-        }
-      };
-    } else if (this.$parent.current_url == 1) {
-      window.onscroll = function () {
-        if (document.body.scrollTop >= 350 || document.documentElement.scrollTop > 350) {
-          logodark.classList.remove("d-none");
-          logowhite.classList.remove("d-block");
-          aboutus.classList.remove("text-white");
-          whatwedo.classList.remove("text-white");
-          vacancies.classList.remove("text-white");
-          contact.classList.remove("text-white");
-        } else {
-          logodark.classList.remove("d-none");
-          logowhite.classList.remove("d-block");
-          aboutus.classList.remove("text-white");
-          whatwedo.classList.remove("text-white");
-          vacancies.classList.remove("text-white");
-          contact.classList.remove("text-white");
-        }
-      };
-    }
+    // document.getElementById("homeView").onscroll = function () {
+    //   if (document.body.scrollTop >= $(window).height() || document.documentElement.scrollTop > $(window).height()) {
+    //     console.log("second section");
+    //   } else {
+    //     console.log("first section");
+    //   }
+    // }
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>

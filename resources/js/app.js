@@ -8,7 +8,6 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
 // configure particles js
 import VueParticles from 'vue-particles'
 Vue.use(VueParticles)
@@ -151,15 +150,11 @@ const app = new Vue({
   router,
   data: {
     search: '',
-    active_el:0,
-    current_url: 'prueba'
+    active_el: '',
   },
   methods: {
     searchit: _.debounce(() => {
         Fire.$emit('searching');
     },1000),
-    activate:function(el){
-        this.active_el = el;
-    }
   }
 });

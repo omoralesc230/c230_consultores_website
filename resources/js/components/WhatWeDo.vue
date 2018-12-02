@@ -243,11 +243,7 @@
 <script>
 export default {
   mounted() {
-    if (this.$route.path == "/") {
-      this.$parent.current_url = 1;
-    } else {
-      this.$parent.current_url = 0;
-    }
+    this.$parent.active_el = this.$route.path;
     console.log('Component mounted.')
   }
 }

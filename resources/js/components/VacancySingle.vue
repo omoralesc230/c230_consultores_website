@@ -272,6 +272,7 @@ export default {
     },
   },
   mounted() {
+    this.$parent.active_el = this.$route.path;
     axios.get('/api/vacancy/'+this.$route.params.id).then(({data}) => (this.vacancy = data));
   }
 }

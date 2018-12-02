@@ -30769,7 +30769,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __webpack_require__(143);
 
 window.Vue = __webpack_require__(165);
-
 // configure particles js
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_particles__["a" /* default */]);
@@ -30886,16 +30885,12 @@ var app = new Vue({
   router: router,
   data: {
     search: '',
-    active_el: 0,
-    current_url: 'prueba'
+    active_el: ''
   },
   methods: {
     searchit: _.debounce(function () {
       Fire.$emit('searching');
-    }, 1000),
-    activate: function activate(el) {
-      this.active_el = el;
-    }
+    }, 1000)
   }
 });
 
@@ -74336,7 +74331,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      featuredPosts: {}
+      featuredPosts: {},
+      scrolled: 0
     };
   },
 
@@ -74344,65 +74340,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     loadFeatured: function loadFeatured() {
       var _this = this;
 
-      if (this.$route.path == "/") {
-        this.$parent.current_url = 1;
-      } else {
-        this.$parent.current_url = 0;
-      }
       axios.get("api/featured").then(function (_ref) {
         var data = _ref.data;
         return _this.featuredPosts = data;
       });
+    },
+    handleScroll: function handleScroll() {
+      var logodark = document.getElementById("logodark");
+      var logowhite = document.getElementById("logowhite");
+      var aboutus = document.getElementById("aboutus");
+      var whatwedo = document.getElementById("whatwedo");
+      var vacancies = document.getElementById("vacancies");
+      var contact = document.getElementById("contact");
+      if (document.body.scrollTop >= $(window).height() || document.documentElement.scrollTop > $(window).height()) {
+        console.log("second section");
+        logodark.classList.remove("d-none");
+        logowhite.classList.remove("d-block");
+        aboutus.classList.remove("text-white");
+        whatwedo.classList.remove("text-white");
+        vacancies.classList.remove("text-white");
+        contact.classList.remove("text-white");
+      } else {
+        logodark.classList.add("d-none");
+        logowhite.classList.add("d-block");
+        aboutus.classList.add("text-white");
+        whatwedo.classList.add("text-white");
+        vacancies.classList.add("text-white");
+        contact.classList.add("text-white");
+      }
     }
   },
-  mounted: function mounted() {
+  created: function created() {
+    this.$parent.active_el = this.$route.path;
+    window.addEventListener('scroll', this.handleScroll);
     this.loadFeatured();
 
-    //sidenav change
-    var logodark = document.getElementById("logodark");
-    var logowhite = document.getElementById("logowhite");
-    var aboutus = document.getElementById("aboutus");
-    var whatwedo = document.getElementById("whatwedo");
-    var vacancies = document.getElementById("vacancies");
-    var contact = document.getElementById("contact");
-
-    if (this.$parent.current_url == 1) {
-      window.onscroll = function () {
-        if (document.body.scrollTop >= 350 || document.documentElement.scrollTop > 350) {
-          logodark.classList.remove("d-none");
-          logowhite.classList.remove("d-block");
-          aboutus.classList.remove("text-white");
-          whatwedo.classList.remove("text-white");
-          vacancies.classList.remove("text-white");
-          contact.classList.remove("text-white");
-        } else {
-          logodark.classList.add("d-none");
-          logowhite.classList.add("d-block");
-          aboutus.classList.add("text-white");
-          whatwedo.classList.add("text-white");
-          vacancies.classList.add("text-white");
-          contact.classList.add("text-white");
-        }
-      };
-    } else if (this.$parent.current_url == 1) {
-      window.onscroll = function () {
-        if (document.body.scrollTop >= 350 || document.documentElement.scrollTop > 350) {
-          logodark.classList.remove("d-none");
-          logowhite.classList.remove("d-block");
-          aboutus.classList.remove("text-white");
-          whatwedo.classList.remove("text-white");
-          vacancies.classList.remove("text-white");
-          contact.classList.remove("text-white");
-        } else {
-          logodark.classList.remove("d-none");
-          logowhite.classList.remove("d-block");
-          aboutus.classList.remove("text-white");
-          whatwedo.classList.remove("text-white");
-          vacancies.classList.remove("text-white");
-          contact.classList.remove("text-white");
-        }
-      };
-    }
+    // document.getElementById("homeView").onscroll = function () {
+    //   if (document.body.scrollTop >= $(window).height() || document.documentElement.scrollTop > $(window).height()) {
+    //     console.log("second section");
+    //   } else {
+    //     console.log("first section");
+    //   }
+    // }
+  },
+  destroyed: function destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 });
 
@@ -74627,7 +74609,7 @@ var render = function() {
                       staticClass: "img-fluid",
                       attrs: {
                         src: "/img/home/graph.png",
-                        "src-placeholder": "/img/hourglass.png",
+                        "src-placeholder": "",
                         alt: "city"
                       }
                     })
@@ -74669,7 +74651,7 @@ var render = function() {
                       staticClass: "img-fluid",
                       attrs: {
                         src: "/img/home/laptop.png",
-                        "src-placeholder": "/img/hourglass.png",
+                        "src-placeholder": "",
                         alt: "city"
                       }
                     })
@@ -75230,11 +75212,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    if (this.$route.path == "/") {
-      this.$parent.current_url = 1;
-    } else {
-      this.$parent.current_url = 0;
-    }
+    this.$parent.active_el = this.$route.path;
     console.log('Component mounted.');
   }
 });
@@ -76016,11 +75994,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    if (this.$route.path == "/") {
-      this.$parent.current_url = 1;
-    } else {
-      this.$parent.current_url = 0;
-    }
+    this.$parent.active_el = this.$route.path;
     console.log('Component mounted.');
   }
 });
@@ -81050,6 +81024,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted: function mounted() {
     var _this4 = this;
 
+    this.$parent.active_el = this.$route.path;
     axios.get('/api/vacancy/' + this.$route.params.id).then(function (_ref) {
       var data = _ref.data;
       return _this4.vacancy = data;
@@ -85212,11 +85187,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
-    if (this.$route.path == "/") {
-      this.$parent.current_url = 1;
-    } else {
-      this.$parent.current_url = 0;
-    }
+    this.$parent.active_el = this.$route.path;
     axios.get('/api/post/' + this.$route.params.id).then(function (_ref) {
       var data = _ref.data;
       return _this.post = data;
