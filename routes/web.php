@@ -23,6 +23,9 @@ Route::get('/whatwedo', function () {
 Route::get('/post/{id}', function () {
     return view('welcome');
 });
+Route::get('/vacancies', function () {
+    return view('welcome');
+});
 Route::get('/vacancy/{id}', function () {
     return view('welcome');
 });

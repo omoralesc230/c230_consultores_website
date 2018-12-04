@@ -30080,3 +30080,86 @@ readers do not read off random characters that represent icons */
           filter: blur(0);
 }
 
+.router-anim-enter-active {
+  -webkit-animation: coming 1s;
+          animation: coming 1s;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+  opacity: 0;
+}
+
+.router-anim-leave-active {
+  -webkit-animation: going 1s;
+          animation: going 1s;
+}
+
+@-webkit-keyframes going {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  to {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes going {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  to {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes coming {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes coming {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Absolute Center Spinner */
+
+.loading {
+  position: fixed !important;
+  z-index: 1032;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.display-none {
+  display: none !important;
+}
+

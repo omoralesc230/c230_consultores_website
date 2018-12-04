@@ -8,9 +8,13 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+// configurate spinner
+import {RotateSquare2} from 'vue-loading-spinner';
+//
 // configure particles js
-import VueParticles from 'vue-particles'
-Vue.use(VueParticles)
+import VueParticles from 'vue-particles';
+Vue.use(VueParticles);
 //
 
 // configuration of lazy image
@@ -31,7 +35,7 @@ window.Fire = new Vue();
 // end costum event
 
 // Sweet alert configuration
-import swal from 'sweetalert2'
+import swal from 'sweetalert2';
 window.swal = swal;
 
 const toast = swal.mixin({
@@ -45,11 +49,11 @@ window.toast = toast;
 // swal ends
 
 // Vform configuration starts
-import { Form, HasError, AlertError } from 'vform'
+import { Form, HasError, AlertError } from 'vform';
 
 window.Form = Form;
-Vue.component(HasError.name, HasError)
-Vue.component(AlertError.name, AlertError)
+Vue.component(HasError.name, HasError);
+Vue.component(AlertError.name, AlertError);
 // vform configuration ends
 
 // laravel vue pagination
@@ -70,6 +74,7 @@ let routes = [
   { path: '/users', component: require('./components/Users.vue') },
   { path: '/clients', component: require('./components/Costumer.vue') },
   { path: '/media', component: require('./components/Media.vue') },
+  { path: '/vacancies', component: require('./components/Vacancies.vue') },
   { path: '/vacancy', component: require('./components/Vacancy.vue') },
   { path: '/vacancy/:id', component: require('./components/VacancySingle.vue') },
   { path: '/post', component: require('./components/Post.vue') },
@@ -85,13 +90,13 @@ const router = new VueRouter({
 // Vue router configuration ends
 
 // Vue Progressbar configuration
-import VueProgressBar from 'vue-progressbar'
+import VueProgressBar from 'vue-progressbar';
 
 Vue.use(VueProgressBar, {
   color: 'rgb(143, 255, 199)',
   failedColor: 'red',
   height: '3px'
-})
+});
 // Vue Progressbar
 
 // Filters start
@@ -148,6 +153,9 @@ Vue.component('staff', require('./components/Staff.vue'));
 const app = new Vue({
   el: '#app',
   router,
+  components: {
+    RotateSquare2
+  },
   data: {
     search: '',
     active_el: '',
@@ -158,3 +166,8 @@ const app = new Vue({
     },1000),
   }
 });
+
+let loader = document.getElementById("loader");
+window.addEventListener('load', function () {
+  loader.classList.add("display-none");
+}, false);

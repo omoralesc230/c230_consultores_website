@@ -156,3 +156,48 @@ $fa-font-path: "../webfonts";
 .v-lazy-image-loaded {
   filter: blur(0);
 }
+
+// route transition
+.router-anim-enter-active {
+  animation: coming 1s;
+  animation-delay: .5s;
+  opacity: 0;
+}
+.router-anim-leave-active {
+  animation: going 1s;
+}
+
+@keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+@keyframes coming {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Absolute Center Spinner */
+.loading {
+  position: fixed !important;
+  z-index: 1032;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.display-none {
+  display: none !important;
+}

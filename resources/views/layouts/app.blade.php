@@ -21,6 +21,9 @@
 </head>
 <body>
   <div id="app">
+    <div id="loader" class="loading-background" style="position:fixed; height:100vh; width:100%; margin:auto; background-color:grey; z-index:1031;">
+      <rotate-square2 class="loading"></rotate-square2>
+    </div>
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top">
       <div class="container">
         <a class="navbar-brand d-block d-md-none" href="{{ url('/') }}">
@@ -99,10 +102,10 @@
 
   <ul class="nav flex-column sidenav app-sidenav mt-5" id="app-sidenav">
     <li class="nav-item mt-3">
-      <a href="{{ url('/') }}" class="nav-link">
+      <router-link id="home" to="/" class="nav-link" style="background-color: transparent !important;">
         <img id="logodark" src="/img/logo_dark.png" alt="c230 consultores logo" :class="{ 'd-none' : active_el == '/' }">
         <img id="logowhite" src="/img/logo_light.png" alt="c230 consultores logo" class="d-none" :class="{ 'd-block' : active_el == '/' }">
-      </a>
+      </router-link>
     </li>
     <li class="nav-item mt-2" :class="{ activesn : active_el == '/aboutus' }">
       <router-link id="aboutus" to="/aboutus" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
@@ -115,7 +118,9 @@
       </router-link>
     </li>
     <li class="nav-item mt-2" :class="{ activesn : active_el == '/vacancies' }">
-      <a id="vacancies" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }" href="#">vacantes</a>
+      <router-link id="vacancies" to="/vacancies" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
+        vacantes
+      </router-link>
     </li>
     <li class="nav-item mt-2" :class="{ activesn : active_el == '/contact'}">
       <a id="contact" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }" href="#">contacto</a>
@@ -123,7 +128,9 @@
   </ul>
 
   <main>
-    <router-view></router-view>
+    <transition name="router-anim">
+      <router-view></router-view>
+    </transition>
   </main>
 
   <footer style="background-color:#4a4a4a;">
