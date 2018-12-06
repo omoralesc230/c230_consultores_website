@@ -78,7 +78,8 @@ let routes = [
   { path: '/vacancy', component: require('./components/Vacancy.vue') },
   { path: '/vacancy/:id', component: require('./components/VacancySingle.vue') },
   { path: '/post', component: require('./components/Post.vue') },
-  { path: '/post/:id', component: require('./components/PostSingle.vue') },
+  { path: '/post/:id', component: require('./components/PostSingleAdmin.vue') },
+  { path: '/posts/:id', component: require('./components/PostSingle.vue') },
   { path: '/profile', component: require('./components/Profile.vue') },
   { path: '*', component: require('./components/NotFound.vue') },
 ];

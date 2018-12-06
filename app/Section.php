@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\HasApiTokens;
 
-class Post extends Model
+class Section extends Model
 {
   use HasApiTokens;
 
@@ -15,15 +15,16 @@ class Post extends Model
    * @var array
    */
   protected $fillable = [
-      'title', 'description', 'type', 'featured', 'picture', 'order'
+      'title', 'type', 'description', 'text', 'order', 'post_id'
   ];
 
-  public function sections()
+  public function post()
   {
-    return $this->hasMany('App\Section');
+    return $this->belongsTo('App\Post');
   }
 
-  public function costumers() {
-    return $this->belongsToMany('App\Costumer');
+  public function items()
+  {
+    return $this->hasMany('App\Item');
   }
 }

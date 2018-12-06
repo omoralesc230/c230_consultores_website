@@ -61,7 +61,7 @@
                     <p class="d-none d-md-block">
                       {{featuredPost.description}}
                     </p>
-                    <router-link :to="'/post/'+featuredPost.id" class="btn btn-orange mt-2">
+                    <router-link :to="'/posts/'+featuredPost.id" class="btn btn-orange mt-2">
                       Saber más...
                     </router-link>
                   </div>

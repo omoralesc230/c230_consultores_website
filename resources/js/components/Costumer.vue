@@ -33,14 +33,16 @@
               <table class="table table-hover">
                 <tbody>
                   <tr>
-                    <th>ID</th>
+                    <th>Logo</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Created at</th>
                     <th>Modify</th>
                   </tr>
                   <tr v-for="costumer in costumers" :key="costumer.id">
-                    <td>{{ costumer.id }}</td>
+                    <td>
+                      <img style="width:100px;" :src="'/img/costumers/'+costumer.picture" alt="costumer picture">
+                    </td>
                     <td>{{ costumer.name }}</td>
                     <td>{{ costumer.description }}</td>
                     <td>{{ costumer.created_at | myDate }}</td>

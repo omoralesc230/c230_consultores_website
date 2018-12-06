@@ -31,5 +31,10 @@ Route::apiResources(['application' => 'API\ApplicationController']);
 Route::apiResources(['post' => 'API\PostController']);
 Route::get('featured', 'API\PostController@featuredPosts');
 Route::put('ordered', 'API\PostController@updatePosts');
+Route::put('linkedcostumers', 'API\PostController@costumersLinked');
 
 Route::apiResources(['costumer' => 'API\CostumerController']);
+
+Route::apiResources(['section' => 'API\SectionController']);
+
+Route::apiResources(['item' => 'API\ItemController']);

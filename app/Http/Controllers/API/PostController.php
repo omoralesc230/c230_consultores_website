@@ -81,6 +81,13 @@ class PostController extends Controller
     return ['message' => "Success"];
   }
 
+  public function costumersLinked(Request $request)
+  {
+    $post = Post::find($request->post_id);
+    $post->costumers()->sync($request->costumers);
+    return ['message' => "Success"];
+  }
+
   /**
   * Display the specified resource.
   *
@@ -89,7 +96,7 @@ class PostController extends Controller
   */
   public function show($id)
   {
-    return Post::find($id);
+    return Post::with('sections')->with('costumers')->find($id);
   }
 
   /**

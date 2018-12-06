@@ -41,13 +41,15 @@
                   <th>Created At</th>
                   <th>Featured</th>
                   <th>Order</th>
-                  <th>Modify</th>
+                  <th>Show</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <draggable :list="posts.data" :options="{animation:200, handle:'.my-handle'}" :element="'tbody'" @change="updateOrder">
                 <tr v-for="post in posts.data" :key="post.id">
                   <td>
-                    <i class="fas fa-arrows-alt my-handle"></i>
+                    <i class="fas fa-arrows-alt my-handle" style="cursor:pointer;"></i>
                   </td>
                   <td>
                     <img class="post-img" :src="'/img/posts/'+post.picture" alt="post picture">
@@ -61,10 +63,17 @@
                   </td>
                   <td>{{ post.order }}</td>
                   <td>
+                    <router-link :to="'/post/'+post.id" class="btn btn-secondary">
+                      <i class="fas fa-eye"></i>
+                    </router-link>
+                  </td>
+                  <td>
                     <a class="btn btn-primary" @click="editModal(post)">
                       <i class="fas fa-edit"></i>
                       <!-- <span class=""> Edit</span> -->
                     </a>
+                  </td>
+                  <td>
                     <a class="btn btn-danger" @click="deletePost(post.id)">
                       <i class="fas fa-trash"></i>
                       <!-- <span> Delete</span> -->
@@ -132,15 +141,8 @@
 
                   <div class="form-group">
                     <input v-model="form.order" type="number" name="order" placeholder="Order"
-                      class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
+                      class="form-control" :class="{ 'is-invalid': form.errors.has('order') }">
                     <has-error :form="form" field="order"></has-error>
-                  </div>
-
-                  <div>
-                    <label class="typo__label">Clients</label>
-                    <multiselect v-model="selectedCostumers" :options="costumers" :multiple="true" :close-on-select="false" :clear-on-select="false" :preserve-search="true" placeholder="Pick some" label="name" track-by="name" :preselect-first="true">
-                      <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single" v-if="values.length &amp;&amp; !isOpen">{{ values.length }} selected client(s)</span></template>
-                    </multiselect>
                   </div>
                 </div>
               </div>
@@ -171,8 +173,6 @@ export default {
       editmode: false,
       posts: {},
       post: {},
-      selectedCostumers:[],
-      costumers: [],
       form: new Form({
         id: '',
         title: '',
@@ -212,7 +212,6 @@ export default {
     },
     loadPosts(){
       axios.get("api/post").then(({data}) => (this.posts = data));
-      axios.get("api/costumer").then(({data}) => (this.costumers = data.data));
     },
     newModal(){
       this.editmode = false;
@@ -248,8 +247,7 @@ export default {
     },
     updatePost(){
       this.$Progress.start();
-      this.form.put('api/post/'+this.form.id,
-      ).then(() =>{
+      this.form.put('api/post/'+this.form.id).then(() =>{
         //successfull
         $('#postsModal').modal('hide');
         swal(
