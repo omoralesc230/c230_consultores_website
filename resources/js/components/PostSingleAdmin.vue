@@ -60,6 +60,61 @@
           <hr>
           <div class="row">
             <div class="col-md-12">
+              <div class="card" v-for="section in post.sections" :key="section.id">
+                <div class="card-header">
+                  <h5 class="card-title">
+                    {{section.title}}
+                    <small>
+                      <span class="badge badge-pill badge-secondary">
+                        {{ section.type }}
+                      </span>
+                    </small>
+                  </h5>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool text-secondary" @click="editSectionModal(section)">
+                      <i class="fa fa-pencil-alt"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool text-danger" @click="deleteSection(section.id)">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  {{ section.description }}
+                  <button class="btn btn-secondary btn-sm mt-3 mb-3 float-right" name="button">Add item</button>
+                  <table class="table table-hover table-sm col-md-12">
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>text</th>
+                        <th>picture</th>
+                        <th>Edit</th>
+                        <th>delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>hello</td>
+                        <td>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <td>lol</td>
+                        <td>
+                          <a class="btn text-secondary">
+                            <i class="fas fa-pencil-alt"></i>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn text-danger">
+                            <i class="fas fa-trash"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div class="list-group mt-2 mb-3">
                 <a class="list-group-item list-group-item-action flex-column align-items-start" v-for="section in post.sections" :key="section.id">
                   <div class="d-flex w-100 justify-content-between">
@@ -72,11 +127,11 @@
                       </small>
                     </h5>
                     <small>
-                      <a class="text-secondary" @click="editSectionModal(section)">
+                      <a class="text-secondary btn" @click="editSectionModal(section)">
                         <i class="fas fa-pencil-alt"></i>
                       </a>
-                      /
-                      <a class="text-danger" @click="deleteSection(section.id)">
+                      |
+                      <a class="text-danger btn" @click="deleteSection(section.id)">
                         <i class="fas fa-trash"></i>
                       </a>
                     </small>

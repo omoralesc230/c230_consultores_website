@@ -31315,6 +31315,10 @@ var app = new Vue({
     active_el: ''
   },
   methods: {
+    scrollToTop: function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+
     searchit: _.debounce(function () {
       Fire.$emit('searching');
     }, 1000)
@@ -92930,6 +92934,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -93196,91 +93255,174 @@ var render = function() {
           _c("hr"),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c(
-                "div",
-                { staticClass: "list-group mt-2 mb-3" },
+            _c(
+              "div",
+              { staticClass: "col-md-12" },
+              [
                 _vm._l(_vm.post.sections, function(section) {
-                  return _c(
-                    "a",
-                    {
-                      key: section.id,
-                      staticClass:
-                        "list-group-item list-group-item-action flex-column align-items-start"
-                    },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "d-flex w-100 justify-content-between" },
-                        [
-                          _c("h5", { staticClass: "mb-1" }, [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(section.title) +
-                                "\n                    "
-                            ),
-                            _c("small", [
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "badge badge-pill badge-secondary"
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                        " +
-                                      _vm._s(section.type) +
-                                      "\n                      "
-                                  )
-                                ]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("small", [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "text-secondary",
-                                on: {
-                                  click: function($event) {
-                                    _vm.editSectionModal(section)
-                                  }
-                                }
-                              },
-                              [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                            ),
-                            _vm._v(
-                              "\n                    /\n                    "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "text-danger",
-                                on: {
-                                  click: function($event) {
-                                    _vm.deleteSection(section.id)
-                                  }
-                                }
-                              },
-                              [_c("i", { staticClass: "fas fa-trash" })]
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "mb-1" }, [
+                  return _c("div", { key: section.id, staticClass: "card" }, [
+                    _c("div", { staticClass: "card-header" }, [
+                      _c("h5", { staticClass: "card-title" }, [
                         _vm._v(
                           "\n                  " +
-                            _vm._s(section.description) +
-                            "\n                "
+                            _vm._s(section.title) +
+                            "\n                  "
+                        ),
+                        _c("small", [
+                          _c(
+                            "span",
+                            { staticClass: "badge badge-pill badge-secondary" },
+                            [
+                              _vm._v(
+                                "\n                      " +
+                                  _vm._s(section.type) +
+                                  "\n                    "
+                              )
+                            ]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-tools" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-tool text-secondary",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.editSectionModal(section)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-pencil-alt" })]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-tool text-danger",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.deleteSection(section.id)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-trash" })]
                         )
                       ])
-                    ]
-                  )
-                })
-              )
-            ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(section.description) +
+                          "\n                "
+                      ),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-secondary btn-sm mt-3 mb-3 float-right",
+                          attrs: { name: "button" }
+                        },
+                        [_vm._v("Add item")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1, true)
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "list-group mt-2 mb-3" },
+                  _vm._l(_vm.post.sections, function(section) {
+                    return _c(
+                      "a",
+                      {
+                        key: section.id,
+                        staticClass:
+                          "list-group-item list-group-item-action flex-column align-items-start"
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "d-flex w-100 justify-content-between"
+                          },
+                          [
+                            _c("h5", { staticClass: "mb-1" }, [
+                              _vm._v(
+                                "\n                    " +
+                                  _vm._s(section.title) +
+                                  "\n                    "
+                              ),
+                              _c("small", [
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "badge badge-pill badge-secondary"
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                        " +
+                                        _vm._s(section.type) +
+                                        "\n                      "
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("small", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "text-secondary btn",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.editSectionModal(section)
+                                    }
+                                  }
+                                },
+                                [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                              ),
+                              _vm._v(
+                                "\n                    |\n                    "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "text-danger btn",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.deleteSection(section.id)
+                                    }
+                                  }
+                                },
+                                [_c("i", { staticClass: "fas fa-trash" })]
+                              )
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "mb-1" }, [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(section.description) +
+                              "\n                "
+                          )
+                        ])
+                      ]
+                    )
+                  })
+                )
+              ],
+              2
+            )
           ])
         ])
       ])
@@ -93376,7 +93518,7 @@ var render = function() {
                   [_vm._v("Update Section")]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(2)
               ]),
               _vm._v(" "),
               _c(
@@ -93690,7 +93832,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(2),
+              _vm._m(3),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("div", { staticClass: "container-fluid" }, [
@@ -93808,6 +93950,59 @@ var staticRenderFns = [
       "button",
       { staticClass: "btn btn-primary", attrs: { type: "button" } },
       [_c("i", { staticClass: "fas fa-user" }), _vm._v(" Link authors")]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "table",
+      { staticClass: "table table-hover table-sm col-md-12" },
+      [
+        _c("thead", [
+          _c("tr", [
+            _c("th", [_vm._v("id")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("title")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("text")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("picture")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Edit")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("delete")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tbody", [
+          _c("tr", [
+            _c("td", [_vm._v("1")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("hello")]),
+            _vm._v(" "),
+            _c("td", [
+              _vm._v(
+                "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n                      "
+              )
+            ]),
+            _c("td", [_vm._v("lol")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("a", { staticClass: "btn text-secondary" }, [
+                _c("i", { staticClass: "fas fa-pencil-alt" })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c("a", { staticClass: "btn text-danger" }, [
+                _c("i", { staticClass: "fas fa-trash" })
+              ])
+            ])
+          ])
+        ])
+      ]
     )
   },
   function() {

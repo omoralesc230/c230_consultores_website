@@ -162,6 +162,9 @@ const app = new Vue({
     active_el: '',
   },
   methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     searchit: _.debounce(() => {
         Fire.$emit('searching');
     },1000),

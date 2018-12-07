@@ -102,23 +102,23 @@
 
   <ul class="nav flex-column sidenav app-sidenav mt-5" id="app-sidenav">
     <li class="nav-item mt-3">
-      <router-link id="home" to="/" class="nav-link" style="background-color: transparent !important;">
+      <router-link @click.native="scrollToTop" id="home" to="/" class="nav-link" style="background-color: transparent !important;">
         <img id="logodark" src="/img/logo_dark.png" alt="c230 consultores logo" :class="{ 'd-none' : active_el == '/' }">
         <img id="logowhite" src="/img/logo_light.png" alt="c230 consultores logo" class="d-none" :class="{ 'd-block' : active_el == '/' }">
       </router-link>
     </li>
     <li class="nav-item mt-2" :class="{ activesn : active_el == '/aboutus' }">
-      <router-link id="aboutus" to="/aboutus" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
+      <router-link @click.native="scrollToTop" id="aboutus" to="/aboutus" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
         quiénes somos
       </router-link>
     </li>
     <li class="nav-item mt-2" :class="{ activesn : active_el == '/whatwedo' }">
-      <router-link id="whatwedo" to="/whatwedo" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
+      <router-link @click.native="scrollToTop" id="whatwedo" to="/whatwedo" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
         qué hacemos
       </router-link>
     </li>
     <li class="nav-item mt-2" :class="{ activesn : active_el == '/vacancies' }">
-      <router-link id="vacancies" to="/vacancies" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
+      <router-link @click.native="scrollToTop" id="vacancies" to="/vacancies" class="nav-link text-uppercase" :class="{ 'text-white' : active_el == '/' }">
         vacantes
       </router-link>
     </li>
