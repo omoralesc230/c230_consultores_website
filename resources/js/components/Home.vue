@@ -272,14 +272,6 @@ export default {
     this.$parent.active_el = this.$route.path;
     window.addEventListener('scroll', this.handleScroll);
     this.loadFeatured();
-
-    // document.getElementById("homeView").onscroll = function () {
-    //   if (document.body.scrollTop >= $(window).height() || document.documentElement.scrollTop > $(window).height()) {
-    //     console.log("second section");
-    //   } else {
-    //     console.log("first section");
-    //   }
-    // }
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);

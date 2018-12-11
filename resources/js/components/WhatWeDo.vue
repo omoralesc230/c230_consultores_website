@@ -5,6 +5,9 @@
   .bg-grey-black{
     background-color:#4a4a4a;
   }
+  .bg-orange {
+    background-color: #ff7900;
+  }
   .bg-grey{
     background-color:#7a7a7a;
   }
@@ -21,6 +24,223 @@
     position: absolute;
     padding: 10%;
   }
+  /* builings effects */
+  .clouds {
+    width: 70%;
+    position: relative;
+    animation: linear-move 4s infinite alternate;
+    animation-timing-function: linear;
+  }
+  @keyframes linear-move {
+    from {left: -100px;}
+    to {left: 100px;}
+  }
+  .land {
+    width: 70%;
+  }
+  /* public organizations builing */
+  .public_organizations {
+    width: 18%;
+    position: absolute;
+    left: 40%;
+    opacity: 0.4;
+    cursor: pointer;
+    animation: up-down-move 2s infinite alternate;
+    animation-timing-function: linear;
+  }
+
+  .public_organizations:hover{
+    opacity: 0.9;
+  }
+
+  @keyframes up-down-move {
+    from {top: 54%;}
+    to {top: 56%;}
+  }
+
+  @media (min-width: 1450px) {
+    .public_organizations{
+      width: 17%;
+      left: 40%;
+    }
+    @keyframes up-down-move {
+      from {top: 52%;}
+      to {top: 54%;}
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .public_organizations{
+      width: 16%;
+      left: 41%;
+    }
+    @keyframes up-down-move {
+      from {top: 52%;}
+      to {top: 54%;}
+    }
+  }
+
+  @media (min-width: 1680px) {
+    .public_organizations{
+      width: 14%;
+      left: 43%;
+    }
+    @keyframes up-down-move {
+      from {top: 50%;}
+      to {top: 52%;}
+    }
+  }
+  /* public organizations builing */
+  /* multilateral building */
+  .multilateral {
+    width: 18%;
+    position: absolute;
+    left: 23%;
+    opacity: 0.4;
+    cursor: pointer;
+    animation: up-down-move-multilateral 2s infinite alternate;
+    animation-timing-function: linear;
+  }
+  .multilateral:hover {
+    opacity: 0.9;
+  }
+  @keyframes up-down-move-multilateral {
+    from {top: 35%;}
+    to {top: 37%;}
+  }
+  @media (min-width: 1450px) {
+    .multilateral{
+      width: 17%;
+      left: 24%;
+    }
+    @keyframes up-down-move-multilateral {
+      from {top: 33%;}
+      to {top: 35%;}
+    }
+  }
+  @media (min-width: 1500px) {
+    .multilateral{
+      width: 16%;
+      left: 27%;
+    }
+    @keyframes up-down-move-multilateral {
+      from {top: 32%;}
+      to {top: 34%;}
+    }
+  }
+  @media (min-width: 1680px) {
+    .multilateral{
+      width: 13%;
+      left: 31%;
+    }
+    @keyframes up-down-move-multilateral {
+      from {top: 30%;}
+      to {top: 32%;}
+    }
+  }
+  /* multilateral building */
+  /* international org building */
+  .international_org {
+    width: 15%;
+    position: absolute;
+    left: 47%;
+    top: 65%;
+    opacity: 0.4;
+    cursor: pointer;
+    animation: up-down-move-int-org 2s infinite alternate;
+    animation-timing-function: linear;
+  }
+  .international_org:hover {
+    opacity: 0.9;
+  }
+  @keyframes up-down-move-int-org {
+    from {top: 65%;}
+    to {top: 67%;}
+  }
+  @media (min-width: 1450px) {
+    .international_org{
+      width: 14%;
+      left: 46%;
+    }
+    @keyframes up-down-move-int-org {
+      from {top: 64%;}
+      to {top: 66%;}
+    }
+  }
+  @media (min-width: 1500px) {
+    .international_org{
+      width: 12%;
+      left: 46%;
+    }
+    @keyframes up-down-move-int-org {
+      from {top: 64%;}
+      to {top: 66%;}
+    }
+  }
+  @media (min-width: 1680px) {
+    .international_org{
+      width: 10%;
+      left: 47%;
+    }
+    @keyframes up-down-move-int-org {
+      from {top: 64%;}
+      to {top: 66%;}
+    }
+  }
+  /* international org building */
+  /* private sector building */
+  .private_sector {
+    width: 13%;
+    position: absolute;
+    left: 61%;
+    top: 65%;
+    opacity: 0.4;
+    cursor: pointer;
+    animation: up-down-move-private 2s infinite alternate;
+    animation-timing-function: linear;
+  }
+  .private_sector:hover {
+    opacity: 0.9;
+  }
+  @keyframes up-down-move-private {
+    from {top: 50%;}
+    to {top: 52%;}
+  }
+  @media (min-width: 1450px) {
+    .private_sector{
+      width: 12%;
+      left: 60%;
+    }
+    @keyframes up-down-move-private {
+      from {top: 48%;}
+      to {top: 50%;}
+    }
+  }
+  @media (min-width: 1500px) {
+    .private_sector{
+      width: 11%;
+      left: 59%;
+    }
+    @keyframes up-down-move-private {
+      from {top: 48%;}
+      to {top: 50%;}
+    }
+  }
+  @media (min-width: 1680px) {
+    .private_sector{
+      width: 9%;
+      left: 57%;
+    }
+    @keyframes up-down-move-private {
+      from {top: 48%;}
+      to {top: 50%;}
+    }
+  }
+  /* private sector building */
+  .selected {
+    opacity: 0.9 !important;
+  }
+  /* builings effects */
 </style>
 <template>
   <div>
@@ -49,6 +269,55 @@
                 <div class="col-md-2">
                   <img src="/img/whatwedo/svg/triangle.svg" alt="triangle">
                   Añadimos valor al trabajo de nuestros clientes
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col d-none d-md-block sidenav-space"></div>
+      <div class="col bg-white">
+        <div class="row">
+          <div class="container">
+            <h1 class="mt-4">¿Para Quiénes?</h1>
+            <hr>
+            <img class="img-fluid mx-auto clouds d-none d-lg-block" src="/img/whatwedo/svg/clouds.svg" alt="clouds">
+            <img class="img-fluid mx-auto land d-none d-lg-block" src="/img/whatwedo/svg/land.svg" alt="land">
+            <img :class="{ selected : modal_type == 1 }" class="img-fluid mx-auto multilateral d-none d-lg-block" src="/img/whatwedo/svg/multilateral.svg" alt="multilateral" @click="changeModal(1)">
+            <img :class="{ selected : modal_type == 2 }" class="img-fluid mx-auto public_organizations d-none d-lg-block" src="/img/whatwedo/svg/public_organizations.svg" alt="public organizations" @click="changeModal(2)">
+            <img :class="{ selected : modal_type == 3 }" class="img-fluid mx-auto international_org d-none d-lg-block" src="/img/whatwedo/svg/international_org.svg" alt="international_org" @click="changeModal(3)">
+            <img :class="{ selected : modal_type == 4 }" class="img-fluid mx-auto private_sector d-none d-lg-block" src="/img/whatwedo/svg/private_sector.svg" alt="private_sector" @click="changeModal(4)">
+            <!-- Modal -->
+            <div class="modal fade" id="buildingModal" tabindex="-1" role="dialog" aria-labelledby="buildingModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header bg-orange">
+                    <h5 class="modal-title text-white" id="buildingModalLabel" v-show="modal_type == 1">Multilaterales</h5>
+                    <h5 class="modal-title text-white" id="buildingModalLabel" v-show="modal_type == 2">Organizaciones públicas</h5>
+                    <h5 class="modal-title text-white" id="buildingModalLabel" v-show="modal_type == 3">Organismos internacionales</h5>
+                    <h5 class="modal-title text-white" id="buildingModalLabel" v-show="modal_type == 4">Sector privado</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" @click="removeModalType">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p v-show="modal_type == 1">
+                      Apoyamos a organizaciones compuestas por diversos países, en diferentes temáticas y que comparten agendas e intereses globales o regionales.
+                    </p>
+                    <p v-show="modal_type == 2">
+                      Trabajamos de la mano con Organizaciones e Instituciones públicas de gobierno, desde el ámbito local, hasta lo estatal y federal.
+                    </p>
+                    <p v-show="modal_type == 3">
+                      Colaboramos con Organismos Internacionales en la implementación de Políticas Públicas y proyectos de incidencia social.
+                    </p>
+                    <p v-show="modal_type == 4">
+                      Respaldamos iniciativas desde lo privado, con un impacto público.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -242,6 +511,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      modal_type: 0
+    }
+  },
+  methods: {
+    removeModalType() {
+      this.modal_type = 0;
+    },
+    changeModal(type) {
+      this.modal_type = type;
+      $('#buildingModal').modal('show');
+    }
+  },
   mounted() {
     this.$parent.active_el = this.$route.path;
     console.log('Component mounted.')

@@ -82222,14 +82222,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.$parent.active_el = this.$route.path;
     window.addEventListener('scroll', this.handleScroll);
     this.loadFeatured();
-
-    // document.getElementById("homeView").onscroll = function () {
-    //   if (document.body.scrollTop >= $(window).height() || document.documentElement.scrollTop > $(window).height()) {
-    //     console.log("second section");
-    //   } else {
-    //     console.log("first section");
-    //   }
-    // }
   },
   destroyed: function destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -83586,7 +83578,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.sidenav-space{\n  max-width:250px;\n}\n.bg-grey-black{\n  background-color:#4a4a4a;\n}\n.bg-grey{\n  background-color:#7a7a7a;\n}\n.full-height{\n  height:100vh;\n}\n.half-height{\n  height: 40vh;\n}\n.chess {\n  padding: 10%;\n}\n.particles-content{\n  position: absolute;\n  padding: 10%;\n}\n", ""]);
+exports.push([module.i, "\n.sidenav-space{\n  max-width:250px;\n}\n.bg-grey-black{\n  background-color:#4a4a4a;\n}\n.bg-orange {\n  background-color: #ff7900;\n}\n.bg-grey{\n  background-color:#7a7a7a;\n}\n.full-height{\n  height:100vh;\n}\n.half-height{\n  height: 40vh;\n}\n.chess {\n  padding: 10%;\n}\n.particles-content{\n  position: absolute;\n  padding: 10%;\n}\n/* builings effects */\n.clouds {\n  width: 70%;\n  position: relative;\n  -webkit-animation: linear-move 4s infinite alternate;\n          animation: linear-move 4s infinite alternate;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n}\n@-webkit-keyframes linear-move {\nfrom {left: -100px;\n}\nto {left: 100px;\n}\n}\n@keyframes linear-move {\nfrom {left: -100px;\n}\nto {left: 100px;\n}\n}\n.land {\n  width: 70%;\n}\n/* public organizations builing */\n.public_organizations {\n  width: 18%;\n  position: absolute;\n  left: 40%;\n  opacity: 0.4;\n  cursor: pointer;\n  -webkit-animation: up-down-move 2s infinite alternate;\n          animation: up-down-move 2s infinite alternate;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n}\n.public_organizations:hover{\n  opacity: 0.9;\n}\n@-webkit-keyframes up-down-move {\nfrom {top: 54%;\n}\nto {top: 56%;\n}\n}\n@keyframes up-down-move {\nfrom {top: 54%;\n}\nto {top: 56%;\n}\n}\n@media (min-width: 1450px) {\n.public_organizations{\n    width: 17%;\n    left: 40%;\n}\n@-webkit-keyframes up-down-move {\nfrom {top: 52%;\n}\nto {top: 54%;\n}\n}\n@keyframes up-down-move {\nfrom {top: 52%;\n}\nto {top: 54%;\n}\n}\n}\n@media (min-width: 1500px) {\n.public_organizations{\n    width: 16%;\n    left: 41%;\n}\n@-webkit-keyframes up-down-move {\nfrom {top: 52%;\n}\nto {top: 54%;\n}\n}\n@keyframes up-down-move {\nfrom {top: 52%;\n}\nto {top: 54%;\n}\n}\n}\n@media (min-width: 1680px) {\n.public_organizations{\n    width: 14%;\n    left: 43%;\n}\n@-webkit-keyframes up-down-move {\nfrom {top: 50%;\n}\nto {top: 52%;\n}\n}\n@keyframes up-down-move {\nfrom {top: 50%;\n}\nto {top: 52%;\n}\n}\n}\n/* public organizations builing */\n/* multilateral building */\n.multilateral {\n  width: 18%;\n  position: absolute;\n  left: 23%;\n  opacity: 0.4;\n  cursor: pointer;\n  -webkit-animation: up-down-move-multilateral 2s infinite alternate;\n          animation: up-down-move-multilateral 2s infinite alternate;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n}\n.multilateral:hover {\n  opacity: 0.9;\n}\n@-webkit-keyframes up-down-move-multilateral {\nfrom {top: 35%;\n}\nto {top: 37%;\n}\n}\n@keyframes up-down-move-multilateral {\nfrom {top: 35%;\n}\nto {top: 37%;\n}\n}\n@media (min-width: 1450px) {\n.multilateral{\n    width: 17%;\n    left: 24%;\n}\n@-webkit-keyframes up-down-move-multilateral {\nfrom {top: 33%;\n}\nto {top: 35%;\n}\n}\n@keyframes up-down-move-multilateral {\nfrom {top: 33%;\n}\nto {top: 35%;\n}\n}\n}\n@media (min-width: 1500px) {\n.multilateral{\n    width: 16%;\n    left: 27%;\n}\n@-webkit-keyframes up-down-move-multilateral {\nfrom {top: 32%;\n}\nto {top: 34%;\n}\n}\n@keyframes up-down-move-multilateral {\nfrom {top: 32%;\n}\nto {top: 34%;\n}\n}\n}\n@media (min-width: 1680px) {\n.multilateral{\n    width: 13%;\n    left: 31%;\n}\n@-webkit-keyframes up-down-move-multilateral {\nfrom {top: 30%;\n}\nto {top: 32%;\n}\n}\n@keyframes up-down-move-multilateral {\nfrom {top: 30%;\n}\nto {top: 32%;\n}\n}\n}\n/* multilateral building */\n/* international org building */\n.international_org {\n  width: 15%;\n  position: absolute;\n  left: 47%;\n  top: 65%;\n  opacity: 0.4;\n  cursor: pointer;\n  -webkit-animation: up-down-move-int-org 2s infinite alternate;\n          animation: up-down-move-int-org 2s infinite alternate;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n}\n.international_org:hover {\n  opacity: 0.9;\n}\n@-webkit-keyframes up-down-move-int-org {\nfrom {top: 65%;\n}\nto {top: 67%;\n}\n}\n@keyframes up-down-move-int-org {\nfrom {top: 65%;\n}\nto {top: 67%;\n}\n}\n@media (min-width: 1450px) {\n.international_org{\n    width: 14%;\n    left: 46%;\n}\n@-webkit-keyframes up-down-move-int-org {\nfrom {top: 64%;\n}\nto {top: 66%;\n}\n}\n@keyframes up-down-move-int-org {\nfrom {top: 64%;\n}\nto {top: 66%;\n}\n}\n}\n@media (min-width: 1500px) {\n.international_org{\n    width: 12%;\n    left: 46%;\n}\n@-webkit-keyframes up-down-move-int-org {\nfrom {top: 64%;\n}\nto {top: 66%;\n}\n}\n@keyframes up-down-move-int-org {\nfrom {top: 64%;\n}\nto {top: 66%;\n}\n}\n}\n@media (min-width: 1680px) {\n.international_org{\n    width: 10%;\n    left: 47%;\n}\n@-webkit-keyframes up-down-move-int-org {\nfrom {top: 64%;\n}\nto {top: 66%;\n}\n}\n@keyframes up-down-move-int-org {\nfrom {top: 64%;\n}\nto {top: 66%;\n}\n}\n}\n/* international org building */\n/* private sector building */\n.private_sector {\n  width: 13%;\n  position: absolute;\n  left: 61%;\n  top: 65%;\n  opacity: 0.4;\n  cursor: pointer;\n  -webkit-animation: up-down-move-private 2s infinite alternate;\n          animation: up-down-move-private 2s infinite alternate;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n}\n.private_sector:hover {\n  opacity: 0.9;\n}\n@-webkit-keyframes up-down-move-private {\nfrom {top: 50%;\n}\nto {top: 52%;\n}\n}\n@keyframes up-down-move-private {\nfrom {top: 50%;\n}\nto {top: 52%;\n}\n}\n@media (min-width: 1450px) {\n.private_sector{\n    width: 12%;\n    left: 60%;\n}\n@-webkit-keyframes up-down-move-private {\nfrom {top: 48%;\n}\nto {top: 50%;\n}\n}\n@keyframes up-down-move-private {\nfrom {top: 48%;\n}\nto {top: 50%;\n}\n}\n}\n@media (min-width: 1500px) {\n.private_sector{\n    width: 11%;\n    left: 59%;\n}\n@-webkit-keyframes up-down-move-private {\nfrom {top: 48%;\n}\nto {top: 50%;\n}\n}\n@keyframes up-down-move-private {\nfrom {top: 48%;\n}\nto {top: 50%;\n}\n}\n}\n@media (min-width: 1680px) {\n.private_sector{\n    width: 9%;\n    left: 57%;\n}\n@-webkit-keyframes up-down-move-private {\nfrom {top: 48%;\n}\nto {top: 50%;\n}\n}\n@keyframes up-down-move-private {\nfrom {top: 48%;\n}\nto {top: 50%;\n}\n}\n}\n/* private sector building */\n.selected {\n  opacity: 0.9 !important;\n}\n/* builings effects */\n", ""]);
 
 // exports
 
@@ -83839,8 +83831,292 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      modal_type: 0
+    };
+  },
+
+  methods: {
+    removeModalType: function removeModalType() {
+      this.modal_type = 0;
+    },
+    changeModal: function changeModal(type) {
+      this.modal_type = type;
+      $('#buildingModal').modal('show');
+    }
+  },
   mounted: function mounted() {
     this.$parent.active_el = this.$route.path;
     console.log('Component mounted.');
@@ -83857,6 +84133,277 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col bg-white" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("h1", { staticClass: "mt-4" }, [_vm._v("¿Para Quiénes?")]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "img-fluid mx-auto clouds d-none d-lg-block",
+              attrs: { src: "/img/whatwedo/svg/clouds.svg", alt: "clouds" }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "img-fluid mx-auto land d-none d-lg-block",
+              attrs: { src: "/img/whatwedo/svg/land.svg", alt: "land" }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "img-fluid mx-auto multilateral d-none d-lg-block",
+              class: { selected: _vm.modal_type == 1 },
+              attrs: {
+                src: "/img/whatwedo/svg/multilateral.svg",
+                alt: "multilateral"
+              },
+              on: {
+                click: function($event) {
+                  _vm.changeModal(1)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass:
+                "img-fluid mx-auto public_organizations d-none d-lg-block",
+              class: { selected: _vm.modal_type == 2 },
+              attrs: {
+                src: "/img/whatwedo/svg/public_organizations.svg",
+                alt: "public organizations"
+              },
+              on: {
+                click: function($event) {
+                  _vm.changeModal(2)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass:
+                "img-fluid mx-auto international_org d-none d-lg-block",
+              class: { selected: _vm.modal_type == 3 },
+              attrs: {
+                src: "/img/whatwedo/svg/international_org.svg",
+                alt: "international_org"
+              },
+              on: {
+                click: function($event) {
+                  _vm.changeModal(3)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "img-fluid mx-auto private_sector d-none d-lg-block",
+              class: { selected: _vm.modal_type == 4 },
+              attrs: {
+                src: "/img/whatwedo/svg/private_sector.svg",
+                alt: "private_sector"
+              },
+              on: {
+                click: function($event) {
+                  _vm.changeModal(4)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "modal fade",
+                attrs: {
+                  id: "buildingModal",
+                  tabindex: "-1",
+                  role: "dialog",
+                  "aria-labelledby": "buildingModalLabel",
+                  "aria-hidden": "true"
+                }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "modal-dialog", attrs: { role: "document" } },
+                  [
+                    _c("div", { staticClass: "modal-content" }, [
+                      _c("div", { staticClass: "modal-header bg-orange" }, [
+                        _c(
+                          "h5",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 1,
+                                expression: "modal_type == 1"
+                              }
+                            ],
+                            staticClass: "modal-title text-white",
+                            attrs: { id: "buildingModalLabel" }
+                          },
+                          [_vm._v("Multilaterales")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "h5",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 2,
+                                expression: "modal_type == 2"
+                              }
+                            ],
+                            staticClass: "modal-title text-white",
+                            attrs: { id: "buildingModalLabel" }
+                          },
+                          [_vm._v("Organizaciones públicas")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "h5",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 3,
+                                expression: "modal_type == 3"
+                              }
+                            ],
+                            staticClass: "modal-title text-white",
+                            attrs: { id: "buildingModalLabel" }
+                          },
+                          [_vm._v("Organismos internacionales")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "h5",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 4,
+                                expression: "modal_type == 4"
+                              }
+                            ],
+                            staticClass: "modal-title text-white",
+                            attrs: { id: "buildingModalLabel" }
+                          },
+                          [_vm._v("Sector privado")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "close text-white",
+                            attrs: {
+                              type: "button",
+                              "data-dismiss": "modal",
+                              "aria-label": "Close"
+                            },
+                            on: { click: _vm.removeModalType }
+                          },
+                          [
+                            _c("span", { attrs: { "aria-hidden": "true" } }, [
+                              _vm._v("×")
+                            ])
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "modal-body" }, [
+                        _c(
+                          "p",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 1,
+                                expression: "modal_type == 1"
+                              }
+                            ]
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Apoyamos a organizaciones compuestas por diversos países, en diferentes temáticas y que comparten agendas e intereses globales o regionales.\n                  "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 2,
+                                expression: "modal_type == 2"
+                              }
+                            ]
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Trabajamos de la mano con Organizaciones e Instituciones públicas de gobierno, desde el ámbito local, hasta lo estatal y federal.\n                  "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 3,
+                                expression: "modal_type == 3"
+                              }
+                            ]
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Colaboramos con Organismos Internacionales en la implementación de Políticas Públicas y proyectos de incidencia social.\n                  "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.modal_type == 4,
+                                expression: "modal_type == 4"
+                              }
+                            ]
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Respaldamos iniciativas desde lo privado, con un impacto público.\n                  "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
@@ -92966,29 +93513,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -93258,170 +93782,81 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col-md-12" },
-              [
-                _vm._l(_vm.post.sections, function(section) {
-                  return _c("div", { key: section.id, staticClass: "card" }, [
-                    _c("div", { staticClass: "card-header" }, [
-                      _c("h5", { staticClass: "card-title" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(section.title) +
-                            "\n                  "
-                        ),
-                        _c("small", [
-                          _c(
-                            "span",
-                            { staticClass: "badge badge-pill badge-secondary" },
-                            [
-                              _vm._v(
-                                "\n                      " +
-                                  _vm._s(section.type) +
-                                  "\n                    "
-                              )
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-tools" }, [
+              _vm._l(_vm.post.sections, function(section) {
+                return _c("div", { key: section.id, staticClass: "card" }, [
+                  _c("div", { staticClass: "card-header" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(section.title) +
+                          "\n                  "
+                      ),
+                      _c("small", [
                         _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-tool text-secondary",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.editSectionModal(section)
-                              }
-                            }
-                          },
-                          [_c("i", { staticClass: "fa fa-pencil-alt" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-tool text-danger",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.deleteSection(section.id)
-                              }
-                            }
-                          },
-                          [_c("i", { staticClass: "fa fa-trash" })]
+                          "span",
+                          { staticClass: "badge badge-pill badge-secondary" },
+                          [
+                            _vm._v(
+                              "\n                      " +
+                                _vm._s(section.type) +
+                                "\n                    "
+                            )
+                          ]
                         )
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(section.description) +
-                          "\n                "
-                      ),
+                    _c("div", { staticClass: "card-tools" }, [
                       _c(
                         "button",
                         {
-                          staticClass:
-                            "btn btn-secondary btn-sm mt-3 mb-3 float-right",
-                          attrs: { name: "button" }
+                          staticClass: "btn btn-tool text-secondary",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.editSectionModal(section)
+                            }
+                          }
                         },
-                        [_vm._v("Add item")]
+                        [_c("i", { staticClass: "fa fa-pencil-alt" })]
                       ),
                       _vm._v(" "),
-                      _vm._m(1, true)
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-tool text-danger",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.deleteSection(section.id)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fa fa-trash" })]
+                      )
                     ])
-                  ])
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "list-group mt-2 mb-3" },
-                  _vm._l(_vm.post.sections, function(section) {
-                    return _c(
-                      "a",
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(section.description) +
+                        "\n                "
+                    ),
+                    _c(
+                      "button",
                       {
-                        key: section.id,
                         staticClass:
-                          "list-group-item list-group-item-action flex-column align-items-start"
+                          "btn btn-secondary btn-sm mt-3 mb-3 float-right",
+                        attrs: { name: "button" }
                       },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "d-flex w-100 justify-content-between"
-                          },
-                          [
-                            _c("h5", { staticClass: "mb-1" }, [
-                              _vm._v(
-                                "\n                    " +
-                                  _vm._s(section.title) +
-                                  "\n                    "
-                              ),
-                              _c("small", [
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "badge badge-pill badge-secondary"
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(section.type) +
-                                        "\n                      "
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("small", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "text-secondary btn",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.editSectionModal(section)
-                                    }
-                                  }
-                                },
-                                [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                              ),
-                              _vm._v(
-                                "\n                    |\n                    "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "text-danger btn",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.deleteSection(section.id)
-                                    }
-                                  }
-                                },
-                                [_c("i", { staticClass: "fas fa-trash" })]
-                              )
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "mb-1" }, [
-                          _vm._v(
-                            "\n                  " +
-                              _vm._s(section.description) +
-                              "\n                "
-                          )
-                        ])
-                      ]
-                    )
-                  })
-                )
-              ],
-              2
+                      [_vm._v("Add item")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(1, true)
+                  ])
+                ])
+              })
             )
           ])
         ])
@@ -93435,14 +93870,15 @@ var render = function() {
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.post.costumers, function(costumer) {
-              return _c("div", { key: costumer.id, staticClass: "col-md-4" }, [
-                _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "card-deck" },
+              _vm._l(_vm.post.costumers, function(costumer) {
+                return _c("div", { key: costumer.id, staticClass: "card" }, [
                   _c("img", {
-                    staticClass: "card-img-top",
+                    staticClass: "rounded mx-auto d-block mt-3 mb-3",
+                    staticStyle: { width: "200px" },
                     attrs: {
                       src: "/img/costumers/" + costumer.picture,
                       alt: "Card image cap"
@@ -93451,13 +93887,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
                     _c("p", { staticClass: "card-text" }, [
-                      _vm._v(_vm._s(costumer.description))
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(costumer.description) +
+                          "\n                "
+                      )
                     ])
                   ])
                 ])
-              ])
-            })
-          )
+              })
+            )
+          ])
         ])
       ])
     ]),
@@ -93956,10 +94396,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "table",
-      { staticClass: "table table-hover table-sm col-md-12" },
-      [
+    return _c("div", { staticClass: "table-responsive" }, [
+      _c("table", { staticClass: "table table-hover table-sm col-md-12" }, [
         _c("thead", [
           _c("tr", [
             _c("th", [_vm._v("id")]),
@@ -93984,7 +94422,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("td", [
               _vm._v(
-                "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n                      "
+                "\n                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n                        "
               )
             ]),
             _c("td", [_vm._v("lol")]),
@@ -94002,8 +94440,8 @@ var staticRenderFns = [
             ])
           ])
         ])
-      ]
-    )
+      ])
+    ])
   },
   function() {
     var _vm = this

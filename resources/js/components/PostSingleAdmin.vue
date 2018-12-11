@@ -82,64 +82,40 @@
                 <div class="card-body">
                   {{ section.description }}
                   <button class="btn btn-secondary btn-sm mt-3 mb-3 float-right" name="button">Add item</button>
-                  <table class="table table-hover table-sm col-md-12">
-                    <thead>
-                      <tr>
-                        <th>id</th>
-                        <th>title</th>
-                        <th>text</th>
-                        <th>picture</th>
-                        <th>Edit</th>
-                        <th>delete</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>hello</td>
-                        <td>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        <td>lol</td>
-                        <td>
-                          <a class="btn text-secondary">
-                            <i class="fas fa-pencil-alt"></i>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="btn text-danger">
-                            <i class="fas fa-trash"></i>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="list-group mt-2 mb-3">
-                <a class="list-group-item list-group-item-action flex-column align-items-start" v-for="section in post.sections" :key="section.id">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">
-                      {{ section.title }}
-                      <small>
-                        <span class="badge badge-pill badge-secondary">
-                          {{ section.type }}
-                        </span>
-                      </small>
-                    </h5>
-                    <small>
-                      <a class="text-secondary btn" @click="editSectionModal(section)">
-                        <i class="fas fa-pencil-alt"></i>
-                      </a>
-                      |
-                      <a class="text-danger btn" @click="deleteSection(section.id)">
-                        <i class="fas fa-trash"></i>
-                      </a>
-                    </small>
+                  <div class="table-responsive">
+                    <table class="table table-hover table-sm col-md-12">
+                      <thead>
+                        <tr>
+                          <th>id</th>
+                          <th>title</th>
+                          <th>text</th>
+                          <th>picture</th>
+                          <th>Edit</th>
+                          <th>delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>hello</td>
+                          <td>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                          <td>lol</td>
+                          <td>
+                            <a class="btn text-secondary">
+                              <i class="fas fa-pencil-alt"></i>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="btn text-danger">
+                              <i class="fas fa-trash"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <p class="mb-1">
-                    {{ section.description }}
-                  </p>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -153,12 +129,13 @@
           <h3 class="mt-3">Costumers</h3>
           <hr>
           <div class="row">
-            <div class="col-md-4" v-for="costumer in post.costumers" :key="costumer.id">
-              <div class="card">
-                <img class="card-img-top" :src="'/img/costumers/'+costumer.picture" alt="Card image cap">
+            <div class="card-deck">
+              <div class="card" v-for="costumer in post.costumers" :key="costumer.id">
+                <img class="rounded mx-auto d-block mt-3 mb-3" style="width:200px;" :src="'/img/costumers/'+costumer.picture" alt="Card image cap">
                 <div class="card-body">
-                  <!-- <h5 class="card-title">{{ costumer.name }}</h5> -->
-                  <p class="card-text">{{ costumer.description }}</p>
+                  <p class="card-text">
+                    {{ costumer.description }}
+                  </p>
                 </div>
               </div>
             </div>
