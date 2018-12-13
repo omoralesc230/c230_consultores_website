@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
+use Illuminate\Support\Str as Str;
 
 class PostController extends Controller
 {
@@ -60,7 +61,8 @@ class PostController extends Controller
       'description' => $request['description'],
       'featured' => $request['featured'],
       'picture' => $name,
-      'order' => $request['order']
+      'order' => $request['order'],
+      'slug' => Str::slug($title),
     ]);
   }
 

@@ -15,7 +15,7 @@ class Post extends Model
    * @var array
    */
   protected $fillable = [
-      'title', 'description', 'type', 'featured', 'picture', 'order'
+      'title', 'description', 'type', 'featured', 'picture', 'order', 'slug'
   ];
 
   public function sections()
