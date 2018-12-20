@@ -15,7 +15,7 @@ class Item extends Model
    * @var array
    */
   protected $fillable = [
-      'title', 'text', 'picture', 'section_id'
+      'title', 'text', 'picture', 'section_id', 'order'
   ];
 
   public function section()

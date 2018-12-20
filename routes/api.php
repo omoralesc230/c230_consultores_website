@@ -36,5 +36,6 @@ Route::put('linkedcostumers', 'API\PostController@costumersLinked');
 Route::apiResources(['costumer' => 'API\CostumerController']);
 
 Route::apiResources(['section' => 'API\SectionController']);
+Route::put('sectionsOrdered', 'API\SectionController@updateSections');
 
 Route::apiResources(['item' => 'API\ItemController']);

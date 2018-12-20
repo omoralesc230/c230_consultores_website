@@ -63,20 +63,18 @@
                   </td>
                   <td>{{ post.order }}</td>
                   <td>
-                    <router-link :to="'/post/'+post.id" class="btn btn-secondary">
+                    <router-link :to="'/post/'+post.id" class="text-secondary">
                       <i class="fas fa-eye"></i>
                     </router-link>
                   </td>
                   <td>
-                    <a class="btn btn-primary" @click="editModal(post)">
+                    <a class="text-primary" @click="editModal(post)">
                       <i class="fas fa-edit"></i>
-                      <!-- <span class=""> Edit</span> -->
                     </a>
                   </td>
                   <td>
-                    <a class="btn btn-danger" @click="deletePost(post.id)">
+                    <a class="text-danger" @click="deletePost(post.id)">
                       <i class="fas fa-trash"></i>
-                      <!-- <span> Delete</span> -->
                     </a>
                   </td>
                 </tr>

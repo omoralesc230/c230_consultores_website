@@ -93,15 +93,15 @@
                      </router-link>
                    </li>
                    <li class="nav-item">
-                     <router-link to="/clients" class="nav-link">
-                       <i class="fas fa-handshake"></i>
-                       <p>Clients</p>
-                     </router-link>
-                   </li>
-                   <li class="nav-item">
                      <router-link to="/vacancy" class="nav-link">
                        <i class="fas fa-briefcase nav-icon"></i>
                        <p>Vacancies</p>
+                     </router-link>
+                   </li>
+                   <li class="nav-item">
+                     <router-link to="/clients" class="nav-link">
+                       <i class="fas fa-handshake"></i>
+                       <p>Clients</p>
                      </router-link>
                    </li>
                    <li class="nav-item">

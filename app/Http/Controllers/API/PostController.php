@@ -98,7 +98,7 @@ class PostController extends Controller
   */
   public function show($id)
   {
-    return Post::with('sections')->with('costumers')->find($id);
+    return Post::with('sections.items')->with('costumers')->find($id);
   }
 
   /**

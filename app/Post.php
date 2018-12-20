@@ -20,7 +20,7 @@ class Post extends Model
 
   public function sections()
   {
-    return $this->hasMany('App\Section');
+    return $this->hasMany('App\Section')->orderBy('order','asc');
   }
 
   public function costumers() {

@@ -96,4 +96,21 @@ class SectionController extends Controller
 
     return ['message' => 'Section deleted!'];
   }
+
+  public function updateSections(Request $request)
+  {
+    $sections = Section::all();
+
+    foreach ($sections as $section) {
+      $id = $section->id;
+      foreach ($request->sections as $sectionFrontend) {
+        if ($sectionFrontend['id'] == $id) {
+          $section->update([
+            'order' => $sectionFrontend['order']
+          ]);
+        }
+      }
+    }
+    return ['message' => "Success"];
+  }
 }

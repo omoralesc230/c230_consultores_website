@@ -1,26 +1,3 @@
-<style>
-  .sidenav-space{
-    max-width:250px;
-  }
-  .full-height{
-    min-height:100vh;
-  }
-
-  .w-100{
-    width: 100%;
-  }
-
-  .h-100{
-    min-height: 100%;
-  }
-
-  .btn-orange{
-    background-color: #ff7900;
-    border-color: #ff7900;
-    color: white;
-  }
-</style>
-
 <template>
   <div>
     <div class="row">
@@ -29,7 +6,7 @@
         <div class="container full-height" style="margin-top:80px;">
           <h1 class="">{{ vacancy.name }}</h1>
           <hr>
-          <div class="row">
+          <div class="row mb-2">
             <div class="col-md-7">
               <div class="card h-100">
                 <div class="card-body">
@@ -277,3 +254,26 @@ export default {
   }
 }
 </script>
+
+<style>
+  .sidenav-space{
+    max-width:250px;
+  }
+  .full-height{
+    min-height:100vh;
+  }
+
+  .w-100{
+    width: 100%;
+  }
+
+  .h-100{
+    min-height: 100%;
+  }
+
+  .btn-orange{
+    background-color: #ff7900;
+    border-color: #ff7900;
+    color: white;
+  }
+</style>

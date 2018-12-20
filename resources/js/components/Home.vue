@@ -45,7 +45,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col">
+      <div class="col bg-grey-black">
         <!-- carousel starts -->
         <div id="Projectscarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
