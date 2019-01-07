@@ -51,17 +51,23 @@
           <ul class="navbar-nav ml-auto d-block d-md-none">
             <!-- Authentication Links -->
             @guest
-              <li class="nav-item" @click="activate(1)" :class="{ active : active_el == 1 }">
-                <a class="nav-link" href="#">Quiénes somos</a>
+              <li class="nav-item mt-2" :class="{ activesn : active_el == '/aboutus' }">
+                <router-link @click.native="scrollToTop" id="aboutus" to="/aboutus" class="nav-link">
+                  Quiénes somos
+                </router-link>
               </li>
-              <li class="nav-item" @click="activate(2)" :class="{ active : active_el == 2 }">
-                <a class="nav-link" href="#">Qué hacemos</a>
+              <li class="nav-item mt-2" :class="{ activesn : active_el == '/whatwedo' }">
+                <router-link @click.native="scrollToTop" id="whatwedo" to="/whatwedo" class="nav-link">
+                  Qué hacemos
+                </router-link>
               </li>
-              <li class="nav-item" @click="activate(3)" :class="{ active : active_el == 3 }">
-                <a class="nav-link" href="#">Medios</a>
+              <li class="nav-item mt-2" :class="{ activesn : active_el == '/vacancies' }">
+                <router-link @click.native="scrollToTop" id="vacancies" to="/vacancies" class="nav-link">
+                  Vacantes
+                </router-link>
               </li>
-              <li class="nav-item" @click="activate(4)" :class="{ active : active_el == 4 }">
-                <a class="nav-link" href="#">Contacto</a>
+              <li class="nav-item mt-2" :class="{ activesn : active_el == '/contact'}">
+                <a id="contact" class="nav-link" href="#">Contacto</a>
               </li>
             @else
               <li class="nav-item dropdown">
