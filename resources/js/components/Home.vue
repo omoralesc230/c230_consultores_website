@@ -80,7 +80,7 @@
           <div class="row justify-content-md-center align-items-center" style="min-height:100vh;">
             <div class="col-sm-12 col-md-8  col-lg-8 text-light text-center">
               <h1 class="font-weight-light">¿Quiénes somos?</h1>
-              <hr>
+              <hr class="separator">
               <p>
                 Somos una consultoría con 11 años de experiencia generando información para impulsar la mejor toma de decisiones.
               </p>
@@ -103,7 +103,7 @@
               <div class="row justify-content-md-center align-items-center what-we-do-home">
                 <div class="col-sm-12 col-md-8 col-lg-8">
                   <h1 class="font-weight-light">¿Qué hacemos?</h1>
-                  <hr>
+                  <hr class="separator">
                   <p class="text-uppercase">
                     Asesoramos la toma de decisiones
                   </p>
@@ -149,7 +149,7 @@
               <p>
                 Si estas interesado en ingresar a C230 Consultores, revisa nuestras vacantes:
               </p>
-              <button type="button" class="btn btn-outline-light">Ir a vacantes</button>
+              <router-link @click.native="scrollToTop" :to="'/vacancies'" class="btn btn-outline-light">Ir a vacantes</router-link>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@
           <div class="row justify-content-around align-items-center" style="padding:20px;">
             <div class="col-sm-10 col-md-6 col-lg-4 about-cards order-1 order-md-2">
               <h1 class="font-weight-light">¿Para Quiénes?</h1>
-              <hr>
+              <hr class="separator">
               <ul>
                 <li>Organizaciones públicas</li>
                 <li>Multilaterales</li>
@@ -189,7 +189,7 @@
           <div class="row justify-content-around align-items-center" style="padding:20px;">
             <div class="col-sm-10 col-md-6 col-lg-4 about-cards">
               <h1 class="font-weight-light">¿En qué trabajamos?</h1>
-              <hr>
+              <hr class="separator">
               <ul>
                 <li>Estrategias</li>
                 <li>Políticas públicas</li>
@@ -214,7 +214,7 @@
           <div class="row justify-content-around align-items-center" style="padding:20px;">
             <div class="col-sm-10 col-md-6 col-lg-4 about-cards order-1 order-md-2">
               <h1 class="font-weight-light">Proyectos</h1>
-              <hr>
+              <hr class="separator">
               <p>
                 Desde hace 11 años hemos realizado proyectos en diversos sectores y para múltiples clientes lo cual nos ha brindado una experiencia única en consultoría en Latinoamérica.
               </p>
@@ -240,6 +240,9 @@ export default {
     }
   },
   methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     loadFeatured(){
       axios.get("api/featured").then(({data}) => (this.featuredPosts = data));
     },

@@ -284,7 +284,7 @@
         <div class="row">
           <div class="container">
             <h1 class="mt-4">¿Para Quiénes?</h1>
-            <hr>
+            <hr class="separator" style="width:30%;" align="left">
             <img class="img-fluid mx-auto clouds d-none d-lg-block" src="/img/whatwedo/svg/clouds.svg" alt="clouds">
             <img class="img-fluid mx-auto land d-none d-lg-block" src="/img/whatwedo/svg/land.svg" alt="land">
             <img :class="{ selected : modal_type == 1 }" class="img-fluid mx-auto multilateral d-none d-lg-block" src="/img/whatwedo/svg/multilateral.svg" alt="multilateral" @click="changeModal(1)">
@@ -333,7 +333,7 @@
         <div class="row">
           <div class="container">
             <h1 class="mt-4 text-center">¿En qué trabajamos?</h1>
-            <hr>
+            <hr class="separator" style="width:60%;">
           </div>
         </div>
         <div class="row">
@@ -385,7 +385,7 @@
       <div class="col bg-white" style="min-height: 60vh;">
         <div class="container particles-content">
           <h1>Soluciones digitales</h1>
-          <hr>
+          <hr class="separator" align="left" style="width:60%;">
           <div class="row justify-content-md-center align-items-center" style="margin-top:3rem;">
             <div class="col-sm-12 col-md-10 col-lg-10">
               <h4 class="text-uppercase text-center">¿Qué hacemos?</h4>

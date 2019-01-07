@@ -22,8 +22,12 @@ $fa-font-path: "../webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
-// Quill wysiwyg
+// separator
+.separator {
+  border: 1.2px solid #ff7900;
+}
 
+// Quill wysiwyg
 .navbar-laravel{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   @include media-breakpoint-up(xs) {

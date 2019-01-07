@@ -87,7 +87,7 @@
           <div class="row justify-content-md-center align-items-center mt-5">
             <div class="col-sm-12 col-md-6  col-lg-6">
               <h1 class="font-weight-light">Incidencia</h1>
-              <hr>
+              <hr class="separator">
               <p>
                 Nosotros proponemos contribuir a la generación e implementación de políticas, intervenciones y programas que favorezcan de manera significativa y sustentable el desarrollo económico, la reducción de la pobreza y la igualdad de oportunidades.
               <p>
@@ -113,7 +113,7 @@
             </div>
             <div class="col-sm-12 col-md-6  col-lg-6">
               <h1 class="font-weight-light">Historia</h1>
-              <hr>
+              <hr class="separator">
               <p>
                 11 años de experiencia
               <p>
@@ -133,7 +133,7 @@
           <div class="row justify-content-md-center align-items-center full-height">
             <div class="col-sm-12 col-md-10  col-lg-10 text-light text-center">
               <h1 class="font-weight-light">Nuestro talento, nuestro valor</h1>
-              <hr>
+              <hr class="separator">
               <p>
                 En C230 Consultores contamos con un equipo de trabajo multidisciplinario, con amplia experiencia y credenciales académicas de las mejores universidades nacionales (UNAM, CIDE, Tecnológico de Monterrey, Universidad Iberoamericana), e internacionales (Columbia, Harvard, Oxford, NYU, MIT, Stanford, Chicago, University of Toronto y University of Notre Dame).
               </p>

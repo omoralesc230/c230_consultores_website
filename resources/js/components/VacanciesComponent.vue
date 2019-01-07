@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-md-12">
         <h1 class="font-weight-light mt-4">Vacantes</h1>
-        <hr>
+        <hr class="separator" align="left" style="width:30%;">
         <div class="row" v-for="vacancy in vacancies.data" :key="vacancy.id">
           <div class="col-md-12">
             <div class="card">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="row">
                       <div class="col">
-                        <router-link :to="'/vacancy/'+vacancy.id" class="btn btn-link">
+                        <router-link @click.native="scrollToTop" :to="'/vacancy/'+vacancy.id" class="btn btn-link">
                           Leer más <i class="fas fa-angle-right ml-1"></i>
                         </router-link>
                       </div>
@@ -84,6 +84,9 @@ export default {
     }
   },
   methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     showModal(id){
       $('#vacanciesModal').modal('show');
       axios.get('api/vacancy/'+id).then((response) => {

@@ -82185,6 +82185,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
+    scrollToTop: function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     loadFeatured: function loadFeatured() {
       var _this = this;
 
@@ -82380,7 +82383,66 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(3),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col", staticStyle: { "background-color": "#ff7900" } },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row justify-content-md-center align-items-center join-us-home"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-sm-12 col-md-8  col-lg-8 text-light text-center"
+                  },
+                  [
+                    _c("h2", { staticClass: "font-weight-light" }, [
+                      _vm._v("Únete a C230 Consultores")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n              Estamos constantemente en búsqueda de talento.\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n              Si estas interesado en ingresar a C230 Consultores, revisa nuestras vacantes:\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-outline-light",
+                        attrs: { to: "/vacancies" },
+                        nativeOn: {
+                          click: function($event) {
+                            return _vm.scrollToTop($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Ir a vacantes")]
+                    )
+                  ],
+                  1
+                )
+              ]
+            )
+          ])
+        ]
+      )
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
@@ -82397,7 +82459,7 @@ var render = function() {
                 staticStyle: { padding: "20px" }
               },
               [
-                _vm._m(4),
+                _vm._m(3),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -82439,7 +82501,7 @@ var render = function() {
                 staticStyle: { padding: "20px" }
               },
               [
-                _vm._m(5),
+                _vm._m(4),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -82478,7 +82540,7 @@ var render = function() {
                 staticStyle: { padding: "20px" }
               },
               [
-                _vm._m(6),
+                _vm._m(5),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -82534,7 +82596,7 @@ var staticRenderFns = [
                     _vm._v("¿Quiénes somos?")
                   ]),
                   _vm._v(" "),
-                  _c("hr"),
+                  _c("hr", { staticClass: "separator" }),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
@@ -82579,7 +82641,7 @@ var staticRenderFns = [
                   _vm._v("¿Qué hacemos?")
                 ]),
                 _vm._v(" "),
-                _c("hr"),
+                _c("hr", { staticClass: "separator" }),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-uppercase" }, [
                   _vm._v(
@@ -82619,65 +82681,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col", staticStyle: { "background-color": "#ff7900" } },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "row justify-content-md-center align-items-center join-us-home"
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "col-sm-12 col-md-8  col-lg-8 text-light text-center"
-                  },
-                  [
-                    _c("h2", { staticClass: "font-weight-light" }, [
-                      _vm._v("Únete a C230 Consultores")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "\n              Estamos constantemente en búsqueda de talento.\n            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "\n              Si estas interesado en ingresar a C230 Consultores, revisa nuestras vacantes:\n            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-outline-light",
-                        attrs: { type: "button" }
-                      },
-                      [_vm._v("Ir a vacantes")]
-                    )
-                  ]
-                )
-              ]
-            )
-          ])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
       {
@@ -82689,7 +82692,7 @@ var staticRenderFns = [
           _vm._v("¿Para Quiénes?")
         ]),
         _vm._v(" "),
-        _c("hr"),
+        _c("hr", { staticClass: "separator" }),
         _vm._v(" "),
         _c("ul", [
           _c("li", [_vm._v("Organizaciones públicas")]),
@@ -82717,7 +82720,7 @@ var staticRenderFns = [
           _vm._v("¿En qué trabajamos?")
         ]),
         _vm._v(" "),
-        _c("hr"),
+        _c("hr", { staticClass: "separator" }),
         _vm._v(" "),
         _c("ul", [
           _c("li", [_vm._v("Estrategias")]),
@@ -82746,7 +82749,7 @@ var staticRenderFns = [
       [
         _c("h1", { staticClass: "font-weight-light" }, [_vm._v("Proyectos")]),
         _vm._v(" "),
-        _c("hr"),
+        _c("hr", { staticClass: "separator" }),
         _vm._v(" "),
         _c("p", [
           _vm._v(
@@ -83350,7 +83353,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-sm-12 col-md-6  col-lg-6" }, [
       _c("h1", { staticClass: "font-weight-light" }, [_vm._v("Incidencia")]),
       _vm._v(" "),
-      _c("hr"),
+      _c("hr", { staticClass: "separator" }),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -83371,7 +83374,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-sm-12 col-md-6  col-lg-6" }, [
       _c("h1", { staticClass: "font-weight-light" }, [_vm._v("Historia")]),
       _vm._v(" "),
-      _c("hr"),
+      _c("hr", { staticClass: "separator" }),
       _vm._v(" "),
       _c("p", [_vm._v("\n              11 años de experiencia\n            ")]),
       _c("p", [
@@ -83408,7 +83411,7 @@ var staticRenderFns = [
                     _vm._v("Nuestro talento, nuestro valor")
                   ]),
                   _vm._v(" "),
-                  _c("hr"),
+                  _c("hr", { staticClass: "separator" }),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
@@ -84142,7 +84145,11 @@ var render = function() {
           _c("div", { staticClass: "container" }, [
             _c("h1", { staticClass: "mt-4" }, [_vm._v("¿Para Quiénes?")]),
             _vm._v(" "),
-            _c("hr"),
+            _c("hr", {
+              staticClass: "separator",
+              staticStyle: { width: "30%" },
+              attrs: { align: "left" }
+            }),
             _vm._v(" "),
             _c("img", {
               staticClass: "img-fluid mx-auto clouds d-none d-lg-block",
@@ -84835,7 +84842,7 @@ var staticRenderFns = [
           _vm._v("¿En qué trabajamos?")
         ]),
         _vm._v(" "),
-        _c("hr")
+        _c("hr", { staticClass: "separator", staticStyle: { width: "60%" } })
       ])
     ])
   },
@@ -84846,7 +84853,11 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container particles-content" }, [
       _c("h1", [_vm._v("Soluciones digitales")]),
       _vm._v(" "),
-      _c("hr"),
+      _c("hr", {
+        staticClass: "separator",
+        staticStyle: { width: "60%" },
+        attrs: { align: "left" }
+      }),
       _vm._v(" "),
       _c(
         "div",
@@ -89605,7 +89616,11 @@ var render = function() {
           [
             _c("h1", {}, [_vm._v(_vm._s(_vm.vacancy.name))]),
             _vm._v(" "),
-            _c("hr"),
+            _c("hr", {
+              staticClass: "separator",
+              staticStyle: { width: "60%" },
+              attrs: { align: "left" }
+            }),
             _vm._v(" "),
             _c("div", { staticClass: "row mb-2" }, [
               _c("div", { staticClass: "col-md-7" }, [
@@ -95076,7 +95091,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.sidenav-space{\n  max-width:250px;\n}\n.full-height{\n  min-height:100vh;\n}\n", ""]);
+exports.push([module.i, "\n.sidenav-space{\n  max-width:250px;\n}\n.full-height{\n  min-height:100vh;\n}\n.bg-grey-black{\n  background-color:#4a4a4a;\n}\n.padding-post {\n  padding-top: 15%;\n}\n@media (min-width: 1450px) {\n.padding-post {\n    padding-top: 10%;\n}\n}\n@media (min-width: 1500px) {\n.padding-post {\n    padding-top: 6%;\n}\n}\n", ""]);
 
 // exports
 
@@ -95087,6 +95102,44 @@ exports.push([module.i, "\n.sidenav-space{\n  max-width:250px;\n}\n.full-height{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -95152,66 +95205,146 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "col",
+            staticStyle: { "background-color": "#E6E6E6" }
+          },
+          [
+            _c("div", { staticClass: "container" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "row justify-content-md-center align-items-center full-height"
+                },
+                [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c(
+                      "p",
+                      { staticClass: "text-uppercase mt-3 padding-post" },
+                      [_vm._v(_vm._s(_vm.post.type))]
+                    ),
+                    _vm._v(" "),
+                    _c("h1", { staticClass: "mb-3" }, [
+                      _vm._v(_vm._s(_vm.post.title))
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "jumbotron" }, [
+                      _c("p", { staticClass: "text-dark text-center" }, [
+                        _vm._v(_vm._s(_vm.post.description))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "card-deck justify-content-center" },
+                      _vm._l(_vm.post.costumers, function(costumer) {
+                        return _c(
+                          "div",
+                          {
+                            key: costumer.id,
+                            staticClass: "card",
+                            staticStyle: { "max-width": "300px" }
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "card-img-top",
+                              staticStyle: {
+                                display: "block",
+                                margin: "auto",
+                                "max-width": "250px"
+                              },
+                              attrs: {
+                                src: "/img/costumers/" + costumer.picture,
+                                alt: costumer.name
+                              }
+                            })
+                          ]
+                        )
+                      })
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col", staticStyle: { "background-color": "#E6E6E6" } },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "row justify-content-md-center align-items-center full-height"
-              },
-              [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("p", { staticClass: "text-uppercase" }, [
-                    _vm._v(_vm._s(_vm.post.type))
-                  ]),
-                  _vm._v(" "),
-                  _c("h1", { staticClass: "mb-3" }, [
-                    _vm._v(_vm._s(_vm.post.title))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "jumbotron" }, [
-                    _c("p", { staticClass: "text-dark" }, [
-                      _vm._v(_vm._s(_vm.post.description))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "row justify-content-md-center" },
-                    _vm._l(_vm.post.costumers, function(costumer) {
-                      return _c(
-                        "div",
-                        { key: costumer.id, staticClass: "col-md-4" },
-                        [
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: {
-                              src: "/img/costumers/" + costumer.picture,
-                              alt: "Card image cap"
-                            }
-                          })
-                        ]
-                      )
-                    })
-                  )
-                ])
-              ]
-            )
+      _vm._l(_vm.post.sections, function(section) {
+        return _c("div", { key: section.id, staticClass: "row" }, [
+          _c("div", { staticClass: "col d-none d-md-block sidenav-space" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col bg-grey-black" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-md-12 mt-3 mb-3" },
+                  [
+                    _c("h1", { staticClass: "mb-3 text-white" }, [
+                      _vm._v(_vm._s(section.title))
+                    ]),
+                    _vm._v(" "),
+                    _c("hr"),
+                    _vm._v(" "),
+                    section.description
+                      ? _c("p", { staticClass: "text-white" }, [
+                          _c("i", { staticClass: "fas fa-caret-right mr-2" }),
+                          _vm._v(_vm._s(section.description))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm._l(section.items, function(item) {
+                      return section.type == "simple list"
+                        ? _c(
+                            "div",
+                            {
+                              key: item.id,
+                              staticClass: "mb-3 text-white",
+                              staticStyle: {
+                                "border-style": "solid",
+                                "border-width": "1.5px",
+                                "border-color": "#ff7900",
+                                padding: "20px"
+                              }
+                            },
+                            [
+                              _c("p", [_vm._v(_vm._s(item.title))]),
+                              _vm._v(" "),
+                              _c("p", [_vm._v(_vm._s(item.text))])
+                            ]
+                          )
+                        : _vm._e()
+                    }),
+                    _vm._v(" "),
+                    section.text
+                      ? _c("p", { staticClass: "text-white" }, [
+                          _c("i", { staticClass: "fas fa-caret-right mr-2" }),
+                          _vm._v(_vm._s(section.text))
+                        ])
+                      : _vm._e()
+                  ],
+                  2
+                )
+              ])
+            ])
           ])
-        ]
-      )
-    ])
-  ])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
@@ -95219,7 +95352,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h5", { staticClass: "ml-3" }, [_vm._v("Clientes:")])
+      _c("h5", { staticClass: "ml-3 mb-3" }, [_vm._v("Clientes:")])
     ])
   }
 ]
@@ -99227,6 +99360,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
+    scrollToTop: function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     showModal: function showModal(id) {
       var _this = this;
 
@@ -99277,7 +99413,11 @@ var render = function() {
             _vm._v("Vacantes")
           ]),
           _vm._v(" "),
-          _c("hr"),
+          _c("hr", {
+            staticClass: "separator",
+            staticStyle: { width: "30%" },
+            attrs: { align: "left" }
+          }),
           _vm._v(" "),
           _vm._l(_vm.vacancies.data, function(vacancy) {
             return _c("div", { key: vacancy.id, staticClass: "row" }, [
@@ -99346,7 +99486,12 @@ var render = function() {
                                 "router-link",
                                 {
                                   staticClass: "btn btn-link",
-                                  attrs: { to: "/vacancy/" + vacancy.id }
+                                  attrs: { to: "/vacancy/" + vacancy.id },
+                                  nativeOn: {
+                                    click: function($event) {
+                                      return _vm.scrollToTop($event)
+                                    }
+                                  }
                                 },
                                 [
                                   _vm._v("\n                        Leer más "),
@@ -99699,7 +99844,11 @@ var render = function() {
         _c("div", { staticClass: "col-sm-12" }, [
           _c("h1", { staticClass: "font-weight-light" }, [_vm._v("Staff")]),
           _vm._v(" "),
-          _c("hr"),
+          _c("hr", {
+            staticClass: "separator",
+            staticStyle: { width: "30%" },
+            attrs: { align: "left" }
+          }),
           _vm._v(" "),
           _c(
             "div",

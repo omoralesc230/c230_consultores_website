@@ -5,7 +5,7 @@
       <div class="col">
         <div class="container full-height" style="margin-top:80px;">
           <h1 class="">{{ vacancy.name }}</h1>
-          <hr>
+          <hr class="separator" style="width:60%;" align="left">
           <div class="row mb-2">
             <div class="col-md-7">
               <div class="card h-100">

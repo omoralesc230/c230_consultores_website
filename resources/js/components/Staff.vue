@@ -37,7 +37,7 @@
     <div class="row justify-content-md-center align-items-center mt-5">
       <div class="col-sm-12">
         <h1 class="font-weight-light">Staff</h1>
-        <hr>
+        <hr align="left" class="separator" style="width:30%;">
         <div class="row mb-4">
           <div class="col-md-4 mb-4" v-for="user in users" :key="user.id">
             <div class="container-staff">
