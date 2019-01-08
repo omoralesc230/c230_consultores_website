@@ -1,5 +1,5 @@
 # C230 Consultores website
-## Instalation
+## Installation
 * Run on your cmd or terminal
 ```bash
 composer install
