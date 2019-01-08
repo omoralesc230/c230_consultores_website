@@ -16,10 +16,10 @@
               </div>
             </div>
             <div class="col-md-5">
-              <div class="card h-100">
-                <v-lazy-image class="card-img-top" src="/img/vacancies/c230_staff.jpg" src-placeholder="/img/hourglass.png" alt="Card image cap"/>
+              <div class="card h-100 mb-2">
+                <v-lazy-image class="card-img-top" src="/img/vacancies/c230_staff.jpg" src-placeholder="" alt="Card image cap"/>
                 <div class="card-body">
-                  <v-lazy-image class="img-fluid" src="/img/vacancies/distintivo_iuvenia.png" src-placeholder="/img/hourglass.png" alt="Card image cap"/>
+                  <v-lazy-image class="img-fluid" src="/img/vacancies/distintivo_iuvenia.png" src-placeholder="" alt="Card image cap"/>
                   <p class="card-text">
                     A C230 Consultores le otorgaron el distintivo IUVENIA para Empresas Amigas de los Jóvenes, por ser una organización líder en políticas de Recursos Humanos, que atrae al mejor talento, invierte en él y desarrolla a su gente.
                   </p>

@@ -89638,13 +89638,13 @@ var render = function() {
               _c("div", { staticClass: "col-md-5" }, [
                 _c(
                   "div",
-                  { staticClass: "card h-100" },
+                  { staticClass: "card h-100 mb-2" },
                   [
                     _c("v-lazy-image", {
                       staticClass: "card-img-top",
                       attrs: {
                         src: "/img/vacancies/c230_staff.jpg",
-                        "src-placeholder": "/img/hourglass.png",
+                        "src-placeholder": "",
                         alt: "Card image cap"
                       }
                     }),
@@ -89657,7 +89657,7 @@ var render = function() {
                           staticClass: "img-fluid",
                           attrs: {
                             src: "/img/vacancies/distintivo_iuvenia.png",
-                            "src-placeholder": "/img/hourglass.png",
+                            "src-placeholder": "",
                             alt: "Card image cap"
                           }
                         }),
