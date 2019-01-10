@@ -62,7 +62,6 @@ class PostController extends Controller
       'featured' => $request['featured'],
       'picture' => $name,
       'order' => $request['order'],
-      'slug' => Str::slug($title),
     ]);
   }
 
